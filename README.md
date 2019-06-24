@@ -1,7 +1,9 @@
 # Data@Rensselaer Book
-<img src="images/data-rpi_logo.jpg" alt="Data@Rensselaer" width="75%">
+<img src="images/logo/data-rpi_logo.jpg" alt="Data@Rensselaer" width="50%">
 
-URL: http://ridcully.mat.rpi.edu/RPI-DATA/
+**URL:** http://ridcully.mat.rpi.edu/RPI-DATA/
+
+This new website was created using [Jupyter Books](https://jupyter.org/jupyter-book/intro.html), a way of collecting multiple Jupyter Notebooks and other Markdown files into a structured, linear narrative.
 
 ## Adding Notebooks
 Coming soon.
