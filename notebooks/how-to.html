@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Getting Started</title>
+  <meta name="description" content="GETTING STARTED">
+
+  <link rel="canonical" href="http://ridcully.mat.rpi.edu/RPI-DATA/notebooks/how-to.html">
+  <link rel="alternate" type="application/rss+xml" title="Data@Rensselaer" href="http://ridcully.mat.rpi.edu/RPI-DATA/feed.xml">
+
+  <meta property="og:url"         content="http://ridcully.mat.rpi.edu/RPI-DATA/notebooks/how-to.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Getting Started" />
+<meta property="og:description" content="GETTING STARTED" />
+<meta property="og:image"       content="" />
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage":
+    "http://ridcully.mat.rpi.edu/RPI-DATA/notebooks/how-to.html",
+  "headline":
+    "Getting Started",
+  "datePublished":
+    "2019-06-21T10:58:37-04:00",
+  "dateModified":
+    "2019-06-21T10:58:37-04:00",
+  "description":
+    "GETTING STARTED",
+  "author": {
+    "@type": "Person",
+    "name": "Sebastian Garcia"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://ridcully.mat.rpi.edu/RPI-DATA",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://ridcully.mat.rpi.edu/RPI-DATA",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/RPI-DATA/assets/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css ">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/RPI-DATA/images/logo/favicon.png">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    CommonHTML: {
+        linebreaks: {
+            automatic: true,
+        },
+    },
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML' async></script>
+
+  <!-- DOM updating function -->
+  <script>
+const runWhenDOMLoaded = cb => {
+  if (document.readyState != 'loading') {
+    cb()
+  } else if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', cb)
+  } else {
+    document.attachEvent('onreadystatechange', function() {
+      if (document.readyState == 'complete') cb()
+    })
+  }
+}
+
+// Helper function to init things quickly
+initFunction = function(myfunc) {
+  runWhenDOMLoaded(myfunc);
+  document.addEventListener('turbolinks:load', myfunc);
+};
+</script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/RPI-DATA';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="/RPI-DATA/assets/js/anchor.min.js"  type="text/javascript"></script>
+  <script>
+
+initFunction(function () {
+    anchors.add("main h1, main h2, main h3, main h4")
+});
+
+</script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="/RPI-DATA/assets/js/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+
+  <!-- Load the auto-generating TOC -->
+  <script src="/RPI-DATA/assets/js/tocbot.min.js"  type="text/javascript"></script>
+  <script>
+var initToc = function () {
+  tocbot.init({
+    tocSelector: 'nav.onthispage',
+    contentSelector: '.c-textbook__content',
+    headingSelector: 'h2, h3',
+    orderedList: false,
+    collapseDepth: 6,
+    listClass: 'toc__menu',
+    activeListItemClass: "",  // Not using
+    activeLinkClass: "", // Not using
+  });
+  tocbot.refresh();
+}
+initFunction(initToc);
+</script>
+
+  <!-- Google analytics -->
+  <script src="/RPI-DATA/assets/js/ga.js" async></script>
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" async></script>
+
+  <!-- Load JS that depends on site variables -->
+  <script>
+/**
+ * Set up copy/paste for code blocks
+ */
+const codeCellId = index => `codecell${index}`
+
+const clipboardButton = id =>
+  `<a id="copy-button-${id}" class="btn copybtn o-tooltip--left" data-tooltip="Copy" data-clipboard-target="#${id}">
+    <img src="/RPI-DATA/assets/images/copy-button.svg" alt="Copy to clipboard">
+  </a>`
+
+// Clears selected text since ClipboardJS will select the text when copying
+const clearSelection = () => {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges()
+  } else if (document.selection) {
+    document.selection.empty()
+  }
+}
+
+// Changes tooltip text for two seconds, then changes it back
+const temporarilyChangeTooltip = (el, newText) => {
+  const oldText = el.getAttribute('data-tooltip')
+  el.setAttribute('data-tooltip', newText)
+  setTimeout(() => el.setAttribute('data-tooltip', oldText), 2000)
+}
+
+const addCopyButtonToCodeCells = () => {
+  // If ClipboardJS hasn't loaded, wait a bit and try again. This
+  // happens because we load ClipboardJS asynchronously.
+  if (window.ClipboardJS === undefined) {
+    setTimeout(addCopyButtonToCodeCells, 250)
+    return
+  }
+
+  const codeCells = document.querySelectorAll('div.c-textbook__content > div.highlighter-rouge > div.highlight > pre, div.input_area pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("copy-button" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', clipboardButton(id));
+    }
+  })
+
+  const clipboard = new ClipboardJS('.copybtn')
+  clipboard.on('success', event => {
+    clearSelection()
+    temporarilyChangeTooltip(event.trigger, 'Copied!')
+  })
+
+  clipboard.on('error', event => {
+    temporarilyChangeTooltip(event.trigger, 'Failed to copy')
+  })
+
+  // Get rid of clipboard before the next page visit to avoid memory leak
+  document.addEventListener('turbolinks:before-visit', () =>
+    clipboard.destroy()
+  )
+}
+
+initFunction(addCopyButtonToCodeCells);
+</script>
+
+
+  <!-- Hide cell code -->
+  <script>
+    /**
+    Add buttons to hide code cells
+    */
+
+
+    var setCodeCellVisibility = function (inputField, kind) {
+        // Update the image and class for hidden
+        var id = inputField.getAttribute('data-id');
+        var codeCell = document.querySelector(`#${id} div.highlight`);
+
+        if (kind === "visible") {
+            codeCell.classList.remove('hidden');
+            inputField.checked = true;
+        } else {
+            codeCell.classList.add('hidden');
+            inputField.checked = false;
+        }
+    }
+
+    var toggleCodeCellVisibility = function (event) {
+        // The label is clicked, and now we decide what to do based on the input field's clicked status
+        if (event.target.tagName === "LABEL") {
+            var inputField = event.target.previousElementSibling;
+        } else {
+            // It is the span inside the target
+            var inputField = event.target.parentElement.previousElementSibling;
+        }
+
+        if (inputField.checked === true) {
+            setCodeCellVisibility(inputField, "visible");
+        } else {
+            setCodeCellVisibility(inputField, "hidden");
+        }
+    }
+
+
+    // Button constructor
+    const hideCodeButton = id => `<input class="hidebtn" type="checkbox" id="hidebtn${id}" data-id="${id}"><label title="Toggle cell" for="hidebtn${id}" class="plusminus"><span class="pm_h"></span><span class="pm_v"></span></label>`
+
+    var addHideButton = function () {
+        // If a hide button is already added, don't add another
+        if (document.querySelector('div.hidecode input') !== null) {
+            return;
+        }
+
+        // Find the input cells and add a hide button
+        document.querySelectorAll('div.input_area').forEach(function (item, index) {
+            if (!item.classList.contains("hidecode")) {
+                // Skip the cell if it doesn't have a hidecode class
+                return;
+            }
+
+            const id = codeCellId(index)
+            item.setAttribute('id', id);
+            // Insert the button just inside the end of the next div
+            item.querySelector('div').insertAdjacentHTML('beforeend', hideCodeButton(id))
+
+            // Set up the visibility toggle
+            hideLink = document.querySelector(`#${id} div.highlight + input + label`);
+            hideLink.addEventListener('click', toggleCodeCellVisibility)
+        });
+    }
+
+
+    // Initialize the hide buttos
+    var initHiddenCells = function () {
+        // Add hide buttons to the cells
+        addHideButton();
+
+        // Toggle the code cells that should be hidden
+        document.querySelectorAll('div.hidecode input').forEach(function (item) {
+            setCodeCellVisibility(item, 'hidden');
+            item.checked = true;
+        })
+    }
+
+    initFunction(initHiddenCells);
+
+</script>
+
+  <!-- Load custom website scripts -->
+  <script src="/RPI-DATA/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/RPI-DATA/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/RPI-DATA/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="/RPI-DATA/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="http://ridcully.mat.rpi.edu/RPI-DATA"><img src="/RPI-DATA/images/logo/rpi.png" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Data@Rensselaer</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/RPI-DATA/index.html"
+        >
+          
+          Home
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__chapter"><a class="c-sidebar__entry" href="/RPI-DATA/search.html">Search</a></li>
+        
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/RPI-DATA/tech/index.html"
+        >
+          
+          Tech Setup
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/RPI-DATA/notebooks/index.html"
+        >
+          
+          Notebooks
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry c-sidebar__entry--active"
+                  href="/RPI-DATA/notebooks/how-to.html"
+                >
+                  
+                  Getting Started
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/RPI-DATA/notebooks/linearregression.html"
+                >
+                  
+                  Linear Regression
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/RPI-DATA/notebooks/PCA.html"
+                >
+                  
+                  Principal Component Analysis
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/RPI-DATA/team/index.html"
+        >
+          
+          Our Team
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/RPI-DATA/faq/index.html"
+        >
+          
+          FAQ
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="https://github.com/RPI-DATA/website"
+        >
+          
+          GitHub Repository
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="https://colab.research.google.com/notebooks/welcome.ipynb#recent=true"
+        >
+          
+          Colab
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="https://rpi-data.slack.com/messages"
+        >
+          
+          Slack
+        </a>
+
+        
+      </li>
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
+</nav>
+
+      
+      <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+      <aside class="sidebar__right">
+          <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+          <nav class="onthispage">
+          </nav>
+      </aside>
+      
+      <main class="c-textbook__page" tabindex="-1">
+          <div class="o-wrapper">
+            <div class="c-sidebar-toggle">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <button
+    id="js-sidebar-toggle"
+    class="hamburger hamburger--arrowalt is-active"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    <span class="c-sidebar-toggle__label">Toggle Sidebar</span>
+  </button>
+</div>
+
+            
+
+            <div class="c-textbook__content">
+              <h1 style="font-family: Verdana, Geneva, sans-serif; text-align:center;">GETTING STARTED</h1>
+
+<h2 id="starting-up-jupyter-notebook">Starting Up Jupyter Notebook</h2>
+<hr />
+
+<p>To use the Jupyter notebook, you have to run the following command (in either <em>Terminal</em> for Mac or <em>Command Prompt</em> for Windows) to see the application in your web broswer:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook
+</code></pre></div></div>
+
+<p>You can also launch it through the Anaconda Navigator startup page.</p>
+
+<p>Once open you will be greeted with the <strong>dashboard</strong>:</p>
+
+<p><img src="../images/Jupyter.png" alt="Jupyter Notebook" /></p>
+
+<ul>
+  <li>The “Files” tab is where all of your files are kept,</li>
+  <li>The “Running” tab keeps track of all the processes and notebooks currently live, and</li>
+  <li>The “Clusters” tab is provided by IPython Parallel, Python’s parallel computing framework.</li>
+</ul>
+
+<h2 id="creating-a-new-notebook">Creating a New Notebook</h2>
+<hr />
+
+<p>To open a new notebook, you can click on the “New” in the “Files” tab and choose the kernel you would like to use.</p>
+
+<p>The main user interface for the notebook looks like this:
+<img src="../images/notebook_UI.png" alt="Notebook UI" /></p>
+
+<p>Note how the Markdown cell is within a blue frame. This means that the cell is in <strong>command</strong> mode, which lets you modify the notebook as a whole. If you double-click on the cell or hit <code class="highlighter-rouge">Enter</code> you will enter <strong>edit</strong> mode, which lets you edit the contents of the cell itself. Note that in command mode, the keyboard changes so letter keys correspond to shortcuts. In this case, however, you can add or format text in the Markdown to give better explanation for the code.</p>
+
+<p>Common formatting syntax include:</p>
+
+<ul>
+  <li>Bookending text with <code class="highlighter-rouge">*</code> will make it * <em>italic</em> *</li>
+  <li>Bookending text with <code class="highlighter-rouge">**</code> will make it ** <strong>bold</strong> **</li>
+  <li>Adding <code class="highlighter-rouge">#</code> in front of a line will make it a header (<code class="highlighter-rouge">##</code> will make a secondary header, <code class="highlighter-rouge">###</code> will make a tertiary header, etc.</li>
+  <li>To apply LaTeX in your markdown, you can bookend your equation with <em>$</em> <code class="highlighter-rouge">($...$)</code> like $c =\pi$</li>
+</ul>
+
+<p>You can find more markdown code in this <a href="https://guides.github.com/features/mastering-markdown">markdown cheatsheet.</a></p>
+
+<p>Additionally, for code cells you can use the following shortcuts:</p>
+
+<ul>
+  <li>Add a new cell by looking under the the “Insert” tab or pressing <code class="highlighter-rouge">B</code> when in command mode</li>
+  <li>Delete a new cell by using the “Edit” tab or by pressing <code class="highlighter-rouge">D, D</code> when in command mode</li>
+  <li>Hit <code class="highlighter-rouge">shift + tab</code> after typing out a function to get a description of how it works</li>
+  <li>After finishing a cell, hit <code class="highlighter-rouge">shift + enter</code> to run it</li>
+</ul>
+
+<p>When running code, the number next to the cell signifies the order in which the code has been run. Thus, you can have situations where you can run a cell near the beginning of your notebook that will overwrite a variable you declared in a later cell.</p>
+
+<p>Once you’re done with your notebook, you can export it to html to contribute it to the project using the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter nbconvert --to html --template basic [your notebook's title].ipynb
+</code></pre></div></div>
+
+<h2 id="creating-a-book">Creating a Book</h2>
+<hr />
+
+<p>If you have a collection of notebooks you want to share with students, you can create a Jupyter Book that organizes them all in a single hub and narrative structure. To do so, first install the Book CLI using the jupyter command line. Specifically, run the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install jupyter-book
+</code></pre></div></div>
+
+<p>Then create your book by navigating to the directory you would like to create your book in and using the following line (replacing “yourbookname” with whatever you would like to name the book):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter-book build yourbookname
+</code></pre></div></div>
+
+<p>Once made, you will see that the book generates many different folders and files. The main components to be concerned about are the <code class="highlighter-rouge">content</code> folder and the files named <code class="highlighter-rouge">_config.yml</code> and <code class="highlighter-rouge">/_data/toc.yml</code>. <code class="highlighter-rouge">Content</code> is where you put all of notebooks you create, and then <code class="highlighter-rouge">toc.yml</code> is the table of contents, which needs to be updated once all of the desired content is in the folder. For example, the following table of contents is for a book chapter called “Features”:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- title: Features
+  url: /features/features
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Markdown files
+    url: /features/markdown
+    not_numbered: true
+  - title: Jupyter notebooks
+    url: /features/notebooks
+    not_numbered: true
+</code></pre></div></div>
+
+<p>The file <code class="highlighter-rouge">_config.yml</code> is for customizing different aspects of your book, such as the title, logo, interactive buttons. Lastly, since notebooks are built using different environments, you may want to specify the packages required to run your book. To do so, update the <code class="highlighter-rouge">requirements.txt</code> file in the main directory. For more details and customization options, visit the <a href="https://jupyter.org/jupyter-book/guide/01_overview.html">Jupyter book guide.</a></p>
+
+<p>Once all of the content is in place and everything is configured, you can create the Markdown in your book by running the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter-book build yourbookname/
+</code></pre></div></div>
+
+<p>which will take the chapters you outlined in the <code class="highlighter-rouge">toc.yml</code> file and automatically organize the notebooks for you. From there, you can ultimately build the html for your book, which will prepare it for the web, through one of two ways:</p>
+
+<ol>
+  <li><strong>Build your site on Github</strong> by simply opening the directory you created your book as a repository and then telling Github to build a site from your repository.</li>
+  <li><strong>Build your site locally</strong> so that you can preview the results before pushing it online. Doing this however will require a third-party application (namely: Docker, Singularity, or Ruby).</li>
+</ol>
+
+              <nav class="c-page__nav">
+  
+    
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/RPI-DATA/notebooks/index">
+      〈 <span class="u-margin-right-tiny"></span> Notebooks
+    </a>
+  
+
+  
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/RPI-DATA/notebooks/linearregression">
+      Linear Regression <span class="u-margin-right-tiny"></span> 〉
+    </a>
+  
+</nav>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>
