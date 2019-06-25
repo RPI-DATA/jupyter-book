@@ -1,7 +1,7 @@
 ---
 redirect_from:
   - "/notebooks/time-series-basic"
-interact_link: content/C:\Users\sjgar\Documents\RPI\clubs and activities\Metallography\RPI-DATA\content\notebooks/time_series_basic.ipynb
+interact_link: content/C:\Users\sjgar\Documents\GitHub\jupyter-book\content\notebooks/time_series_basic.ipynb
 kernel_name: python3
 has_widgets: false
 title: 'Time Series Analysis'
@@ -1202,7 +1202,7 @@ plt.show()
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/RPI/clubs%20and%20activities/Metallography/RPI-DATA/_build/images/notebooks/time_series_basic_37_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_37_0.png)
 
 </div>
 </div>
@@ -1296,7 +1296,7 @@ test_store.Sales.plot()
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/RPI/clubs%20and%20activities/Metallography/RPI-DATA/_build/images/notebooks/time_series_basic_43_1.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_43_1.png)
 
 </div>
 </div>
@@ -1335,7 +1335,7 @@ Text(0.5, 1.0, 'Moving Average Forecast')
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/RPI/clubs%20and%20activities/Metallography/RPI-DATA/_build/images/notebooks/time_series_basic_44_1.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_44_1.png)
 
 </div>
 </div>
@@ -1634,7 +1634,7 @@ plt.xlabel('Date'); plt.ylabel('Rossmann Sales'); plt.title('Rossmann Effect of 
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/RPI/clubs%20and%20activities/Metallography/RPI-DATA/_build/images/notebooks/time_series_basic_60_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_60_0.png)
 
 </div>
 </div>
@@ -1679,7 +1679,7 @@ plt.title('Rossmann Sales');
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/RPI/clubs%20and%20activities/Metallography/RPI-DATA/_build/images/notebooks/time_series_basic_63_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_63_0.png)
 
 </div>
 </div>

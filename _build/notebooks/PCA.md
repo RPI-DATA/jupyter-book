@@ -6,8 +6,8 @@ prev_page:
   url: /notebooks/linearregression
   title: 'Linear Regression'
 next_page:
-  url: /team/index
-  title: 'Our Team'
+  url: /notebooks/time_series_basic
+  title: 'Time Series Analysis'
 title: "Principle Component Analysis"
 
 weight: 3

@@ -4,7 +4,7 @@ prev_page:
   url: /team/index
   title: 'Our Team'
 next_page:
-  url: https://github.com/RPI-DATA/website
+  url: https://github.com/RPI-DATA/jupyter-book
   title: 'GitHub Repository'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

@@ -1,8 +1,8 @@
 ---
 title: 'Linear Regression'
 prev_page:
-  url: /notebooks/how-to
-  title: 'Getting Started'
+  url: /notebooks/pytorch
+  title: 'PyTorch'
 next_page:
   url: /notebooks/PCA
   title: 'Principal Component Analysis'

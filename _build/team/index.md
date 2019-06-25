@@ -1,8 +1,8 @@
 ---
 title: 'Our Team'
 prev_page:
-  url: /notebooks/PCA
-  title: 'Principal Component Analysis'
+  url: /notebooks/time_series_basic
+  title: 'Time Series Analysis'
 next_page:
   url: /faq/index
   title: 'FAQ'

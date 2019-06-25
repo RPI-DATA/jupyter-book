@@ -1,5 +1,5 @@
 ---
-interact_link: content/C:\Users\sjgar\Documents\RPI\clubs and activities\Metallography\RPI-DATA\content\notebooks/pytorch.ipynb
+interact_link: content/C:\Users\sjgar\Documents\GitHub\jupyter-book\content\notebooks/pytorch.ipynb
 kernel_name: python3
 has_widgets: false
 title: 'PyTorch'
