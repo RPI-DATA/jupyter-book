@@ -59,9 +59,6 @@
   - title: Time Series Analysis
     url: /notebooks/time_series_basic
     not_numbered: true
-  - title: Test
-    url: /notebooks/test
-    not_numbered: true
 
 # A chapter w/ a collection of sections beneath it
 - title: Our Team
