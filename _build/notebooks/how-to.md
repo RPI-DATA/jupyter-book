@@ -96,13 +96,19 @@ Once made, you will see that the book generates many different folders and files
 
 The file `_config.yml` is for customizing different aspects of your book, such as the title, logo, and interactive buttons. Lastly, since notebooks are built using different environments, you may want to specify the packages required to run your book. To do so, update the `requirements.txt` file in the main directory. For more details and customization options, visit the [Jupyter book guide.](https://jupyter.org/jupyter-book/guide/01_overview.html)
 
-Once all of the content is in place and everything is configured, you can create the Markdown in your book by running the following command:
+Once all of the content is in place and everything is configured, you can create the Markdown in your book by opening a command line, navigating to the directory above wherever your book is, and running the following command:
 
 ```
-jupyter-book build yourbookname/
+jupyter-book build yourbookname
 ```
 
-which will take the chapters you outlined in the `toc.yml` file and automatically organize the notebooks for you. From there, you can ultimately build the html for your book, which will prepare it for the web, through one of two ways:
+This command will take the chapters you outlined in the `toc.yml` file and automatically organize the notebooks for you as .md files. From there, you can ultimately build the html for your book, which will prepare it for the web, through one of two ways:
 
-1. **Build your site on Github** by simply opening the directory you created your book as a repository and then telling Github to build a site from your repository.
-2. **Build your site locally** so that you can preview the results before pushing it online. Doing this, however, will require a third-party application (namely: Docker, Singularity, or Ruby). 
+
+### 1. Build your site on Github
+
+To build your site using Github Pages, start by creating a repository and cloning it to your local machine. Then copy all of the files and folders in your `yourbookname` folder into the new repository and push it to Github. In Github, go to the Settings of your repository (found near the top right of the page) and scroll down to the Github Pages section. Then select the `master branch` under the Source dropdown. If your `_config.yml` file is configured correctly, then the URL provided should take you to your newly created website.
+
+### 2. Build your site locally
+
+This is helpful if you want to preview the results before pushing it online. Doing this, however, will require a third-party application (either a container like Docker or Singularity, or the Ruby programming language). For a guide on how to build your site locally, check out [this guide](https://jupyter.org/jupyter-book/guide/03_build.html#build-the-books-site-html-locally).
