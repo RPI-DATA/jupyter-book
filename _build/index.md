@@ -4,42 +4,33 @@ prev_page:
   url: 
   title: ''
 next_page:
-  url: /tech/index
+  url: /tech
   title: 'Tech Setup'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-<h1 style="font-family: Verdana, Geneva, sans-serif; text-align:center;">DATA@RENSSELAER</h1>
+<h1 style="font-family: Verdana, Geneva, sans-serif; text-align:center;">Data@Rensselaer</h1>
 
+## Welcome!
 ---
-<p>
-	Welcome to DATA@RENSSELAR! A platform for enabling data science tools across all curriculum at RPI.
-</p>
-<p>
-	We are an open-source project that helps analytics programs both create a community and deliver the highest quality education experience in the rapidly changing world of analytics and data science. Feel free to browse some sample Jupyter notebooks and their live Colab links. If you're new to Jupyter notebooks, please check out the "Getting Started" page to learn more.
-</p>
-<p>
-	Pardon our appearence while we continue to load content to the site!
-</p>
 
-<h2 style="font-family: Verdana, Geneva, sans-serif; font-weight:normal;">VERSION 0.1</h2>
+Welcome to Data@Rensselaer! We are an open-source project that aims to enable usage of data science tools across all curriculum at RPI. This website serves to demonstrate the tools - namely, Jupyter Notebooks - in action under different contexts so that teachers might find a way to implement them in their own classrooms. It also features detailed guides on how to create and publish Notebooks for teachers unfamiliar with the coding aspects.
 
+Please feel free to browse:
+* Some sample [Jupyter Notebooks](https://rpi-data.github.io/jupyter-book/notebooks/index.html) and their live Colab links,
+* The [Getting Started](https://rpi-data.github.io/jupyter-book/notebooks/how-to.html) page to learn more about Jupyter Notebooks,
+* Or the [Demo Textbook](https://rpi-data.github.io/jupyter-book/demo/index.html), which illustrates a truncated class website that you can download and use for your own needs!
+
+## Version 0.2
 ---
-<p>
-	Our current deliverables are to show proof-of-concept via exemplary notebooks, both static and live, as well as fleshed-out documentation on the technology we use. Feel free to browse
-</p>
 
-<h2 style="font-family: Verdana, Geneva, sans-serif;font-weight:normal;"> CONTACT US </h2>
+Our current deliverables are to show proof-of-concept via exemplary notebooks, both static and live, a full-featured demo Jupyter book. and fleshed-out documentation on the technology we use.
 
+Pardon our appearence while we continue to load content to the site!
+
+## Contact Us
 ---
 
 <!-- Test for the idea of having a contact form-->
-<p>
-	Please contact us with any questions or inquiries below.
-</p>
+Please contact us with any questions or inquiries below.
 
-<p>Email <a href="mailto:lewisd2@rpi.edu">lewisd2@rpi.edu</a> and <a href="mailto:kuruzj@rpi.edu">kuruzj@rpi.edu</a></p>
-
-<p><a href="https://colab.research.google.com/github/RPI-DATA/tutorials-intro/blob/master/website/LandingPage.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a></p>
-
- 
-
+<p>Email <a href="mailto:lewisd2@rpi.edu">lewisd2@rpi.edu</a> or <a href="mailto:kuruzj@rpi.edu">kuruzj@rpi.edu</a>.</p>

@@ -1,14 +1,14 @@
 ---
 title: 'Notebooks'
 prev_page:
-  url: /tech/index
+  url: /tech
   title: 'Tech Setup'
 next_page:
   url: /notebooks/how-to
   title: 'Getting Started'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-<h1 style="font-family: Verdana, Geneva, sans-serif; text-align:center;">NOTEBOOKS</h1>
+<h1 style="font-family: Verdana, Geneva, sans-serif; text-align:center;">Notebooks</h1>
 
 ## Overview 
 ---

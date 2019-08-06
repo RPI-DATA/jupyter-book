@@ -35,14 +35,13 @@
 
 # A chapter w/ a collection of sections beneath it
 - title: Tech Setup
-  url: /tech/index
+  url: /tech
   not_numbered: true
 
-# A chapter w/ a collection of sections beneath it
 - title: Notebooks
   url: /notebooks/index
   not_numbered: true
-  expand_sections: true
+  expand_sections: false
   sections:
   - title: Getting Started
     url: /notebooks/how-to
@@ -60,32 +59,92 @@
     url: /notebooks/time_series_basic
     not_numbered: true
 
-# A chapter w/ a collection of sections beneath it
 - title: Our Team
-  url: /team/index
+  url: /team
   not_numbered: true
 
-# A chapter w/ a collection of sections beneath it
 - title: FAQ
-  url: /faq/index
+  url: /faq
   not_numbered: true
 
-# Divider for meta-pages and content page
 - divider: true
 
-# External link
+# DEMO JUPYTER BOOK
+- title: Demo Book
+  url: /demo/index
+  not_numbered: true
+  expand_sections: false
+  sections:
+  - title: Schedule 
+    url: /demo/sessions/index 
+    not_numbered: true
+    expand_subsections: false
+    subsections: 
+    - title: All Readings 
+      url: /demo/sessions/readings 
+      not_numbered: true
+    - title: Session 1 
+      url: /demo/sessions/session1 
+      not_numbered: true 
+    - title: Session 2 
+      url: /demo/sessions/session2 
+      not_numbered: true 
+  - title: Notebooks 
+    url: /demo/notebooks/index 
+    not_numbered: true 
+    expand_subsections: false
+    subsections:
+    - title: What is Jupyter? 
+      url: /demo/notebooks/01-what-is-jupyter 
+      not_numbered: true 
+    - title: Notebook Basics 
+      url: /demo/notebooks/02-notebook-basics 
+      not_numbered: true 
+    - title: Running Code 
+      url: /demo/notebooks/03-running-code 
+      not_numbered: true 
+    - title: Markdown 
+      url: /demo/notebooks/04-markdown 
+      not_numbered: true 
+    - title: Python Overview 
+      url: /demo/notebooks/05-intro-python-overview 
+      not_numbered: true 
+    - title: Basic Data Structures 
+      url: /demo/notebooks/06-intro-python-datastructures 
+      not_numbered: true 
+    - title: Numpy 
+      url: /demo/notebooks/07-intro-python-numpy 
+      not_numbered: true 
+    - title: Pandas 
+      url: /demo/notebooks/08-intro-python-pandas 
+      not_numbered: true 
+  - title: Assignments 
+    url: /demo/assignments/index 
+    not_numbered: true
+    expand_subsections: false
+    subsections:
+    - title: Assignment 1 
+      url: /demo/assignments/assign1 
+      not_numbered: true 
+    - title: Assignment 2 
+      url: /demo/assignments/assign2 
+      not_numbered: true
+  - title: Grading 
+    url: /demo/grading 
+    not_numbered: true 
+
+- divider: true
+
 - title: GitHub Repository
-  url: https://github.com/RPI-DATA/jupyter-book
+  url: https://github.com/RPI-DATA/website
   external: true
   not_numbered: true
 
-# External link
 - title: Colab
   url: https://colab.research.google.com/notebooks/welcome.ipynb#recent=true
   external: true
   not_numbered: true
 
-# External link
 - title: Slack
   url: https://rpi-data.slack.com/messages
   external: true

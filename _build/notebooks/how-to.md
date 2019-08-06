@@ -8,7 +8,7 @@ next_page:
   title: 'PyTorch'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-<h1 style="font-family: Verdana, Geneva, sans-serif; text-align:center;">GETTING STARTED</h1>
+<h1 style="font-family: Verdana, Geneva, sans-serif; text-align:center;">Getting Started</h1>
 
 ## Starting Up Jupyter Notebook
 ---
@@ -112,3 +112,7 @@ To build your site using Github Pages, start by creating a repository and clonin
 ### 2. Build your site locally
 
 This is helpful if you want to preview the results before pushing it online. Doing this, however, will require a third-party application (either a container like Docker or Singularity, or the Ruby programming language). For a guide on how to build your site locally, check out [this guide](https://jupyter.org/jupyter-book/guide/03_build.html#build-the-books-site-html-locally).
+
+### Automatic Jupyter Book Generator
+
+If the prospect of designing a website around your notebooks seems too daunting, you can use our Excel spreadsheet to create the pages for you. The sheet includes tabs that you can populate with general class information, the class schedule, and any assignments or projects. Follow the documentation found in the site's [repository](https://github.com/RPI-DATA/course-intro-ml-app) to learn how to create your own book.

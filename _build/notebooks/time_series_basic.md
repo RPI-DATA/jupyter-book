@@ -9,7 +9,7 @@ prev_page:
   url: /notebooks/PCA
   title: 'Principal Component Analysis'
 next_page:
-  url: /team/index
+  url: /team
   title: 'Our Team'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -1374,7 +1374,7 @@ The rolling average for our model is 1,915.88. This prediction seems to be very 
 The Facebook Prophet package is designed to analyze time series data with daily observations, which can display patterns on different time scales. Prophet is optimized for business tasks with the following characteristics:
 
 hourly, daily, or weekly observations with at least a few months (preferably a year) of history
-strong multiple "human-scale" seasonalities: day of week and time of year
+strong multiple 'human-scale' seasonalities: day of week and time of year
 important holidays that occur at irregular intervals that are known in advance (e.g. the Super Bowl)
 a reasonable number of missing observations or large outliers
 historical trend changes, for instance due to product launches or logging changes
