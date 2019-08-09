@@ -13,29 +13,17 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 
 
-[![AnalyticsDojo](../fig/final-logo.png)](http://rpi.analyticsdojo.com)
-<center><h1>Introduction to Python - Datastructures</h1></center>
-<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
+[![AnalyticsDojo](https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1)](http://rpi.analyticsdojo.com)
+
+<h1 style="text-align:center">Introduction to Python - Datastructures</h1>
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/02-intro-python/02-intro-python-datastructures.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 
 
 
-
-
-# Overview
-Common to R and Python
-- Variables
-- Opearations on Numeric and String Variables
-- Lists
-
-Python Only
-- Dictionaries
-- Sets
-
-
-
-
-
-## Variables
+## Common to R and Python
+---
+### Variables
 - Single value
 - Strings, Integer, Floats and boolean are the most common types of variables.
 - Remember, under the covers they are all objects.
@@ -79,13 +67,11 @@ print(a+str(b))
 
 
 
-## Variable Type (continued)
+#### Variable Type
 - In Python when we write `b = 30` this means the value of `30` is assigned to the `b` object. 
 - Python is a [dynamically typed](https://pythonconquerstheuniverse.wordpress.com/2009/10/03/static-vs-dynamic-typing-of-programming-languages/).
 - Unlike some languages, we don't have to declare the type of a variable before using it. 
-- Variable type can also change with the reassignment of a variable. 
-
-
+- Variable type can also change with the reassignment of a variable.
 
 
 
@@ -118,7 +104,6 @@ Now the value of a is  hello there and of type  <class 'str'>
 
 
 
-## Variable Type (continued)
 
 - _Variables_ themselves do not have a fixed type.
 - It is only the values that they refer to that have an associated _type_.
@@ -154,8 +139,7 @@ c
 
 
 
-# The `type` Function
-
+### The `type` Function
 - We can query the type of a value using the `type` function.
 - Variables can be reassigned to a different type. 
 - There are integer, floating point, and complex number [numeric types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex).
@@ -263,14 +247,12 @@ bool
 
 
 
-# Converting Values Between Types
-
+#### Converting Values Between Types
 - We can convert values between different types.
 - To convert to string use the `str()` function.
 - To convert to floating-point use the `float()` function.
 - To convert to an integer use the `int()` function.
 - To convert to a boolean use the `bool()` function.
-
 
 
 
@@ -307,7 +289,6 @@ print (a, type(a))
 
 
 
-# Converting Values Between Types (Continued)
 - To convert to a boolean use the `bool()` function.
 - `bool` can work with a String type that is `True` or `False`
 - `bool` can work with an integer type that is `1` for `True` or `0` for `False`
@@ -349,14 +330,12 @@ False <class 'bool'>
 
 
 
-# Null Values
-
+### Null Values
 - Sometimes we represent "no data" or "not applicable".  
 - In Python we use the special value `None`.
 - This corresponds to `NA` in R of `Null` in Java/SQL.
 - When we print the value `None` is printed. 
 - If we enter the variable, no result is printed out.
-
 
 
 
@@ -395,7 +374,7 @@ a
 
 
 
-## Operations on Numeric Variables
+### Operations on Numeric Variables
 - Python can be used as a basic calculator.
 - Check out this associated [tutorial](https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator).
 
@@ -433,7 +412,7 @@ Exponents: 25
 
 
 
-## Operations on String Variables
+### Operations on String Variables
 - Just as we can do numeric operations, we can also do operations on strings.
 - Concatentate Strings 
 - A *backslash* is used as an escape variable.
@@ -459,11 +438,7 @@ contin2= """
 This is the second line, but we have included a line continuation character: 
 #Note that to print the continueline character we have to list 2 
 #Note that to print the continueline character we have to list 2
-
-
 """
-
-
 
 print('Concatenation:', a+b )
 print('Tab:', a+tab+b )
@@ -501,8 +476,7 @@ This is the second line, but we have included a line continuation character:
 
 
 
-# Calling Functions on Variables
-
+### Calling Functions on Variables
 - We can call functions in a conventional way using round brackets
 - Python has a wide variety of [built in functions](https://docs.python.org/3/library/functions.html),
 
@@ -525,17 +499,14 @@ print('chr(98) returns the string representing a character whose Unicode code po
 
 
 
-## Exercise - Operations on Variables
-
+### Exercise - Operations on Variables
 1. What happens when you multiply a number times a boolean? What is the resulting type? 
 2. What happens when you try to multiply an integer value times a null?
 3. Take 5 to the power of 4. 
 
 
 
-
-
-## Lists
+### Lists
 - Lists can be used to contain a sequence of values of any type. 
 - You can do operations on lists.
 - The list values start at 0 and that the first value of a list can be printed using `a[0]`
@@ -590,7 +561,6 @@ list
 
 
 
-## Lists
 - Lists can be nested, where there are lists of lists.
 - The elements of a nested list is specified after the first list when slicing `c[0][0]`
 
@@ -624,7 +594,6 @@ This is the first element of the second list: 6
 
 
 
-## Lists
 - Lists can added to with the `append` method or your can directly assign location in list.
 - You can identify the length of a list with `len(a)`
 - [More fuctions on lists](https://docs.python.org/3/tutorial/datastructures.html) include `pop()` `insert()` etc.
@@ -662,8 +631,6 @@ We added 11 to b: [6, 'seven', 8, 'nine', 10, 'Eleven', 12]
 </div>
 
 
-
-## List
 
 - If you set a lista = listb this list will not be a copy but instead be the same list, where if you modify one it will modify both.
 - To create a copy of a list, you can use `lista=listb[:]` or `lista=listb.copy()`
@@ -708,7 +675,7 @@ print(lista2, listb2)
 
 
 
-## Exercise-Lists
+### Exercise - Lists
 Hint: [This list of functions on lists is useful.](https://docs.python.org/3/tutorial/datastructures.html)
 
 1. Create a list `elists1` with the following values (1,2,3,4,5).
@@ -718,18 +685,13 @@ Hint: [This list of functions on lists is useful.](https://docs.python.org/3/tut
 
 
 
-
-
-
-# Sets
-
+## Exclusive to Python
+---
+### Sets
 - Lists can contain duplicate values.
 - A set, in contrast, contains no duplicates.
 - Sets can be created from lists using the `set()` function.
 - Alternatively we can write a set literal using the `{` and `}` brackets.
-
-
-
 
 
 
@@ -777,8 +739,7 @@ print(X, type(X))
 
 
 
-# Sets are Mutable
-
+#### Sets are Mutable
 - Sets are mutable like lists (meaning we can change them)
 - Duplicates are automatically removed
 
@@ -810,12 +771,9 @@ print(X)
 
 
 
-# Sets are Unordered
-
+#### Sets are Unordered
 - Sets do not have an order.
 - Therefore we cannot index or slice them.
-
-
 
 
 
@@ -850,8 +808,7 @@ X[0]
 
 
 
-## Operations on Sets
-
+#### Operations on Sets
 - Union: $X \cup Y$ combines two sets
 
 
@@ -883,7 +840,6 @@ X.union(Y)
 
 
 
-## Operations on Sets
 - Intersection: $X \cap Y$:
 
 
@@ -914,7 +870,6 @@ X.intersection(Y)
 
 
 
-## Operations on Sets
 - Difference $X - Y$:
 
 
@@ -946,7 +901,7 @@ X - Y
 
 
 
-## Dictionaries
+### Dictionaries
 - You can think of dictionaries as arrays that help you assocaite a `key` with a `value`.
 - Dictionaries can be specified with `{key: value, key: value}`
 - Dictionaries can be specified with dict([('key', value), ('key', value)])
@@ -1015,7 +970,7 @@ adict2['g']
 
 
 
-## Exercise-Sets/Dictionary
+### Exercise - Sets/Dictionary
 
 1. Create a set `eset1` with the following values (1,2,3,4,5).
 2. Create a new set `eset2` the following values (1,3,6).
@@ -1024,21 +979,18 @@ adict2['g']
 5. Create a new set `eset5` that includes values that are in both `eset1` and `eset2` (intersection).
 6. Create a new dict `edict1` with the following keys and associated values: st1=45; st2=32; st3=40; st4=31.
 7. Create a new variable edict2 from edict 1 where the key is st3.
- 
 
 
 
-
-
-
-## CREDITS
-
-
-Copyright [AnalyticsDojo](http://rpi.analyticsdojo.com) 2016
+## Credits
+---
+Copyright [AnalyticsDojo](http://rpi.analyticsdojo.com) 2016.
 This work is licensed under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license agreement.
 
 This work has been adopted from the [origional version](https://github.com/phelps-sg/python-bigdata):
-Copyright [Steve Phelps](http://sphelps.net) 2014
+Copyright [Steve Phelps](http://sphelps.net) 2014.
 
 
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/02-intro-python/02-intro-python-datastructures.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 

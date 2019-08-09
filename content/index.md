@@ -1,4 +1,4 @@
-<h1 style="font-family: Verdana, Geneva, sans-serif; text-align:center;">Data@Rensselaer</h1>
+<img src="images/logo/data-rpi_text.png" alt="Data@Rensselaer" style="width:300px">
 
 ## Welcome!
 ---
@@ -13,7 +13,7 @@ Please feel free to browse:
 ## Version 0.2
 ---
 
-Our current deliverables are to show proof-of-concept via exemplary notebooks, both static and live, a full-featured demo Jupyter book. and fleshed-out documentation on the technology we use.
+Our current deliverables are to show proof-of-concept via exemplary notebooks, both static and live, a full-featured demo Jupyter Book, and fleshed-out documentation on the technology we use.
 
 Pardon our appearence while we continue to load content to the site!
 

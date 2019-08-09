@@ -14,42 +14,28 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 
 [![AnalyticsDojo](https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1)](http://rpi.analyticsdojo.com)
-<center><h1>Introduction to Python - Overview and Packages</h1></center>
-<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
 
+<h1 style="text-align:center">Introduction to Python - Overview and Packages</h1>
 
-
-
-
-
-
-
-## Overview
-- Language Features  
-- Python and Jupyter
-- Jupyter and Markdown
-- Python 2 vs Python 3
-- Python and Packages
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/02-intro-python/01-intro-python-overview.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 
 
 
 ## Python Features
+---
 - Python has many of the same features of most programming languages.
 - Python is object oriented. 
 - Python has buit in data types and functions that are included directly.
 - Python has an extensive ecosystem of packages (including ones for data science) available to extend the language to include new data types and functions.
 
-
-
-## Python is Interpreted
+### Python is Interpreted
 - Python is an interpreted language, in contrast to Java and C which are compiled languages.
 - This means we can type statements into the interpreter and they are executed immediately. This works well for data analytics because we can build things step by step.
 
 
 
-
-
 ## Python and Jupyter
+---
 - Python commands can be executed in a Jupyter Notebook just by play at the end of a cell.
 - Blocks of cells or even the entire notebook can be executed by clicking on the *Cell* above.
 - The Kernal is responsible for interpreting the code, and the current kernal is listed on the top right of the notebook. 
@@ -123,6 +109,7 @@ g
 
 
 ## Jupyter and Markdown
+---
 - Jupyter notebooks are a great way of documenting your analytics projects. 
 - Select *Cell->Cell Type->Markdown* to create a *Markdown* Cell.  
 - Check out this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
@@ -143,7 +130,8 @@ g
 
 
 
-## Python 2 vs Python 3
+## Python 2 vs. Python 3
+---
 - Python went through some *breaking changes* when moving from Python 2 to Python 3, and it still causes difficulty in the community. 
 - While we were stuck in Python 2 for a long time, Python 3 is increasingly.
 - We will be basing our learning on Python 3.X.
@@ -179,6 +167,7 @@ print ('Hello, World!')
 
 
 ## Python and Packages
+---
 - There are a tremendous number of packages available which extend the core capabilities of the Python language.
 - Packages are critical for data science, as data typically structured via external package. 
 - The PyPI - the Python Package Index [https://pypi.python.org](https://pypi.python.org) provides search listing of all packages.
@@ -194,6 +183,7 @@ print ('Hello, World!')
 
 
 ## Python and Installing Packages
+---
 - When using Conda, the command `conda install`
 - pip is the package management system used to install and manage Python packages.
 - pip must be run on the terminal. 
@@ -250,6 +240,7 @@ Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.6/dist-pac
 
 
 ## Python and Using Packages
+---
 - Python packages must be imported before using. 
 - Python packages are organized as modules, and you can import the entire package or just the submodule that you need.
 - Packages only have to be imported once in a notebook (not in every cell). 
@@ -290,7 +281,7 @@ pyplot.show()
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/demo/notebooks/05-intro-python-overview_20_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/demo/notebooks/05-intro-python-overview_18_0.png)
 
 </div>
 </div>
@@ -315,9 +306,13 @@ plt.show()
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/demo/notebooks/05-intro-python-overview_21_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/demo/notebooks/05-intro-python-overview_19_0.png)
 
 </div>
 </div>
 </div>
+
+
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/02-intro-python/01-intro-python-overview.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 

@@ -14,21 +14,24 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 
 [![AnalyticsDojo](https://github.com/rpi-techfundamentals/fall2018-materials/blob/master/fig/final-logo.png?raw=1)](http://rpi.analyticsdojo.com)
-<center><h1>Pytorch with the MNIST Dataset - MINST</h1></center>
-<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
 
+<center><h1>Pytorch with the MNIST Dataset</h1></center>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RPI-DATA/tutorials-intro/blob/master/website/04_pytorch_mnist.ipynb)
 
 
 
+## Learning Objectives
+---
+1. Learn how to utilize Pytorch
+2. Employ Pytorch in the creation of an image-recognition algorithm
 
 
-From Kaggle: 
-"MNIST ("Modified National Institute of Standards and Technology") is the de facto 'hello world' dataset of computer vision. Since its release in 1999, this classic dataset of handwritten images has served as the basis for benchmarking classification algorithms. As new machine learning techniques emerge, MNIST remains a reliable resource for researchers and learners alike."
 
-[Read more.](https://www.kaggle.com/c/digit-recognizer)
-
+## MNIST
+---
+MNIST is a database of 70,000 images of handwritten numbers used to evaluate image processing techniques. From [Kaggle](https://www.kaggle.com/c/digit-recognizer): 
+> MNIST ("Modified National Institute of Standards and Technology") is the de facto "hello world" dataset of computer vision. Since its release in 1999, this classic dataset of handwritten images has served as the basis for benchmarking classification algorithms. As new machine learning techniques emerge, MNIST remains a reliable resource for researchers and learners alike.
 
 <a title="By Josef Steppan [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:MnistExamples.png"><img width="512" alt="MnistExamples" src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png"/></a>
 
@@ -74,8 +77,8 @@ Requirement already satisfied: six in /anaconda3/envs/carme/lib/python3.6/site-p
 
 
 
-### Pytorch Advantages vs Tensorflow
-- Pytorch Enables dynamic computational graphs (which change be changed) while Tensorflow is static. 
+### Pytorch Advantages vs. Tensorflow
+- Pytorch enables dynamic computational graphs (which change be changed), while Tensorflow is static. 
 - Tensorflow enables easier deployment. 
 
 
@@ -84,8 +87,6 @@ Requirement already satisfied: six in /anaconda3/envs/carme/lib/python3.6/site-p
 <div class="input_area" markdown="1">
 ```python
 #Import Libraries
-
-
 from __future__ import print_function
 import argparse
 import torch
@@ -94,8 +95,6 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.autograd import Variable
-
-
 
 ```
 </div>
@@ -111,14 +110,13 @@ args={}
 kwargs={}
 args['batch_size']=1000
 args['test_batch_size']=1000
-args['epochs']=10  #The number of Epochs is the number of times you go through the full dataset. 
-args['lr']=0.01 #Learning rate is how fast it will decend. 
-args['momentum']=0.5 #SGD momentum (default: 0.5) Momentum is a moving average of our gradients (helps to keep direction).
+args['epochs']=10     #The number of Epochs is the number of times you go through the full dataset. 
+args['lr']=0.01       #Learning rate is how fast it will decend. 
+args['momentum']=0.5  #SGD momentum (default: 0.5) Momentum is a moving average of our gradients (helps to keep direction).
 
-args['seed']=1 #random seed
+args['seed']=1        #random seed
 args['log_interval']=10
 args['cuda']=False
-
 
 ```
 </div>
@@ -169,8 +167,6 @@ Done!
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
 ```python
-
-
 class Net(nn.Module):
     #This defines the structure of the NN.
     def __init__(self):
@@ -195,7 +191,6 @@ class Net(nn.Module):
         #Softmax gets probabilities. 
         return F.log_softmax(x, dim=1)
 
-
 ```
 </div>
 
@@ -206,7 +201,6 @@ class Net(nn.Module):
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
 ```python
-
 def train(epoch):
     model.train()
     for batch_idx, (data, target) in enumerate(train_loader):
@@ -217,7 +211,7 @@ def train(epoch):
         #This will zero out the gradients for this batch. 
         optimizer.zero_grad()
         output = model(data)
-        # Calculate the loss The negative log likelihood loss. It is useful to train a classification problem with C classes.
+        # Calculate the negative log likelihood loss - it's useful to train a classification problem with C classes.
         loss = F.nll_loss(output, target)
         #dloss/dx for every Variable 
         loss.backward()
@@ -247,9 +241,6 @@ def test():
         test_loss, correct, len(test_loader.dataset),
         100. * correct / len(test_loader.dataset)))
 
-
-
-
 ```
 </div>
 
@@ -269,7 +260,6 @@ optimizer = optim.SGD(model.parameters(), lr=args['lr'], momentum=args['momentum
 for epoch in range(1, args['epochs'] + 1):
     train(epoch)
     test()
-
 
 ```
 </div>
@@ -375,13 +365,5 @@ Test set: Average loss: 0.2524, Accuracy: 9284/10000 (93%)
 
 
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RPI-DATA/tutorials-intro/blob/master/website/04_pytorch_mnist.ipynb)
-
-```
-</div>
-
-</div>
 

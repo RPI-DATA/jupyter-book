@@ -13,7 +13,11 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 
 
-# Markdown Cells
+<img src="https://raw.githubusercontent.com/RPI-DATA/website/master/static/images/rpilogo.png" alt="RPI LOGO" style="width:400px">
+
+<h1 style="text-align:center">Markdown Cells</h1>
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/01-overview/01-notebook-basics/04-markdown.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 
 
 
@@ -23,10 +27,8 @@ Text can be added to Jupyter Notebooks using Markdown cells.  Markdown is a popu
 
 
 
-## Markdown basics
-
-
-
+## Markdown Basics
+---
 You can make text *italic* or **bold**.
 
 
@@ -91,9 +93,7 @@ And shorthand for links:
 
 
 ## Headings
-
-
-
+---
 You can add headings by starting a line with one (or multiple) `#` followed by a space, as in the following example:
 
 ```
@@ -105,10 +105,8 @@ You can add headings by starting a line with one (or multiple) `#` followed by a
 
 
 
-## Embedded code
-
-
-
+## Embedded Code
+---
 You can embed code meant for illustration instead of execution in Python:
 
     def f(x):
@@ -124,10 +122,8 @@ or other languages:
 
 
 
-## LaTeX equations
-
-
-
+## LaTeX Equations
+---
 Courtesy of MathJax, you can include mathematical expressions both inline: 
 $e^{i\pi} + 1 = 0$  and displayed:
 
@@ -147,10 +143,8 @@ $$e^x=\sum_{i=0}^\infty \frac{1}{i!}x^i$$
 
 
 
-## GitHub flavored markdown
-
-
-
+## GitHub-flavored Markdown
+---
 The Notebook webapp supports Github flavored markdown meaning that you can use triple backticks for code blocks:
 
     ```python
@@ -187,9 +181,7 @@ A nice HTML Table:
 
 
 ## General HTML
-
-
-
+---
 Because Markdown is a superset of HTML you can even add things like HTML tables:
 
 <table>
@@ -210,9 +202,7 @@ Because Markdown is a superset of HTML you can even add things like HTML tables:
 
 
 ## Local files
-
-
-
+---
 If you have local files in your Notebook directory, you can refer to these files in Markdown cells directly:
 
     [subdirectory/]<filename>
@@ -235,8 +225,6 @@ These do not embed the data into the notebook file, and require that the files e
 
 ### Security of local files
 
-
-
 Note that this means that the Jupyter notebook server also acts as a generic file server
 for files inside the same tree as your notebooks.  Access is not granted outside the
 notebook folder so you have strict control over what files are visible, but for this
@@ -245,4 +233,8 @@ directory at a high level in your filesystem (e.g. your home directory).
 
 When you run the notebook in a password-protected manner, local file access is restricted
 to authenticated users unless read-only views are active.
+
+
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/01-overview/01-notebook-basics/04-markdown.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 

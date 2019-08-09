@@ -13,7 +13,11 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 
 
-# Running Code
+<img src="https://raw.githubusercontent.com/RPI-DATA/website/master/static/images/rpilogo.png" alt="RPI LOGO" style="width:400px">
+
+<h1 style="text-align:center">Running Code</h1>
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/01-overview/01-notebook-basics/03-running-code.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 
 
 
@@ -22,9 +26,7 @@ First and foremost, the Jupyter Notebook is an interactive environment for writi
 
 
 ## Code cells allow you to enter and run code
-
-
-
+---
 Run a code cell using `Shift-Enter` or pressing the <button class='btn btn-default btn-xs'><i class="icon-step-forward fa fa-step-forward"></i></button> button in the toolbar above:
 
 
@@ -69,9 +71,7 @@ There are two other keyboard shortcuts for running code:
 
 
 ## Managing the Kernel
-
-
-
+---
 Code is run in a separate process called the Kernel.  The Kernel can be interrupted or restarted.  Try running the following cell and then hit the <button class='btn btn-default btn-xs'><i class='icon-stop fa fa-stop'></i></button> button in the toolbar above.
 
 
@@ -116,9 +116,7 @@ from ctypes import CDLL
 
 
 ## Cell menu
-
-
-
+---
 The "Cell" menu has a number of menu items for running code in different ways. These includes:
 
 * Run and Select Below
@@ -129,18 +127,14 @@ The "Cell" menu has a number of menu items for running code in different ways. T
 
 
 
-## Restarting the kernels
-
-
-
+## Restarting the Kernels
+---
 The kernel maintains the state of a notebook's computations. You can reset this state by restarting the kernel. This is done by clicking on the <button class='btn btn-default btn-xs'><i class='fa fa-repeat icon-repeat'></i></button> in the toolbar above.
 
 
 
 ## sys.stdout and sys.stderr
-
-
-
+---
 The stdout and stderr streams are displayed as text in the output area.
 
 
@@ -178,10 +172,8 @@ print('hi, stderr', file=sys.stderr)
 
 
 
-## Output is asynchronous
-
-
-
+## Output is Asynchronous
+---
 All output is displayed asynchronously as it is generated in the Kernel. If you execute the next cell, you will see the output one piece at a time, not all at the end.
 
 
@@ -216,10 +208,8 @@ for i in range(8):
 
 
 
-## Large outputs
-
-
-
+## Large Outputs
+---
 To better handle large outputs, the output area can be collapsed. Run the following cell and then single- or double- click on the active area to the left of the output:
 
 
@@ -815,4 +805,8 @@ for i in range(500):
 </div>
 </div>
 </div>
+
+
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/01-overview/01-notebook-basics/03-running-code.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 

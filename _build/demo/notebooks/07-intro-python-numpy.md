@@ -14,14 +14,15 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 
 [![AnalyticsDojo](https://github.com/rpi-techfundamentals/spring2019-materials/blob/master/fig/final-logo.png?raw=1)](http://rpi.analyticsdojo.com)
-<center><h1>Introduction to Python - Numpy</h1></center>
-<center><h3><a href = 'http://rpi.analyticsdojo.com'>rpi.analyticsdojo.com</a></h3></center>
 
+<h1 style="text-align:center">Introduction to Python - Numpy</h1>
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/02-intro-python/03-intro-python-numpy.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 
 
 
 ## Overview of Numpy
-
+---
 - Numpy is a package that provides additional functionality often useful working with arrays for data science. 
 - Typically Numpy is imported as `np`.
 - `np.array()` will cast a list (or other collection) as a numpy array.
@@ -29,10 +30,10 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 
 
-
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```import numpy as np
+```python
+import numpy as np
 a = np.array([0, 1, 2, 3, 4, 5, 6])
 print('A is of type:', type(a))
 print('Print the entire array:', a)
@@ -51,6 +52,7 @@ print('Print up till the 2nd to last value:', a[:-2])
 
 
 ## Arrays and Functions
+---
 - A really powerful aspect of arrays is the capaiblity to do calculations over arrays.
 - Numpy has a number of functions possible listed [here](http://docs.scipy.org/doc/numpy/reference/routines.math.html).
 - Often it is possible to do calculations directly or via np functions, as shown below. 
@@ -59,7 +61,8 @@ print('Print up till the 2nd to last value:', a[:-2])
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```import numpy as np
+```python
+import numpy as np
 a = np.array([1, 2, 3, 4, 5, 6])
 b1=10*a
 b2=np.multiply(10,a)
@@ -87,6 +90,7 @@ print('Print the entire array f:', f)
 
 
 ## Creating and Manipulating Numpy Arrays
+---
 - The arrange function will generate an array. 
 - Reshape changes the structure of the array to n rows and m columns.
     `a=a.reshape(n, m)`
@@ -97,7 +101,8 @@ print('Print the entire array f:', f)
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```import numpy as np
+```python
+import numpy as np
 a = np.arange(15) 
 print(a)
 a2 = np.arange( 0, 15, 1 ) #Alternate specification with np.arrange(start, end, step)
@@ -122,7 +127,8 @@ print(e)
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```e= np.arange( 0, 1.5, .1 ).reshape(3,5) 
+```python
+e= np.arange( 0, 1.5, .1 ).reshape(3,5) 
 
 ```
 </div>
@@ -132,6 +138,7 @@ print(e)
 
 
 ## Generating Random Numpy Data
+---
 - This is often useful, and we will be using it to demonstrate some initial techniques.
 - Often you want random but repeatable results, so that for example a test could have a consistent average on a random array. For this we need to set a seed. You only have to do this once.
 
@@ -141,7 +148,8 @@ print(e)
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```
+```python
+
 np.random.seed([2335])
 a = np.random.uniform(50, 150, 10)  #Between 50-150, generate 10 variables from uniform
 b = np.random.standard_normal(10)   #With mean 0 and standard deviation 1 
@@ -158,6 +166,7 @@ print(b)
 
 
 ## Combining Numpy Arrays
+---
 - `concatenate` will string a list of numpy arrays together `np.concatenate([a,b])`
 - `vstack` will stack numpy arrays 
 - Defaults: start =0, end =last and step is 1.
@@ -167,7 +176,8 @@ print(b)
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```a = np.arange(5)
+```python
+a = np.arange(5)
 b=np.concatenate([a,a])
 c=np.vstack([a,a])
 d=np.hstack([c,c])
@@ -182,16 +192,17 @@ print('a:',a,'\nb:',b,'\nc:',c,'\nd:',d)
 
 
 ## Slicing Single Dimension Numpy Arrays
+---
 - Slicing arrays includes  three numbers `a[start:stop:step]` but not all are required.
 - Defaults: start =0, end =last and step is 1.
 - To print the entire array, leave start/stop/step blank`a[::]`
 
 
 
-
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```e= np.arange( 0, 15, 1 ) 
+```python
+e= np.arange( 0, 15, 1 ) 
 print(e)
 #[start:end:step]
 
@@ -211,13 +222,15 @@ print("Print all:",e)
 
 
 ## Numpy Arrays From External Datasets
+---
 - We can take a list from an external dataset and change it to an numpy array. 
 
 
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```#First let's download some data. 
+```python
+#First let's download some data. 
 !wget https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/input/iris.csv
 
 ```
@@ -229,7 +242,8 @@ print("Print all:",e)
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```import csv
+```python
+import csv
 csv_file_object = csv.reader(open('iris.csv', newline=''), delimiter=',')
 
 data=[]
@@ -246,7 +260,8 @@ print(data)
 
 
 
-## Slicing 2 Dimensional Numpy Arrays
+## Slicing Two-dimensional Numpy Arrays
+---
 - We can slice arrays with `array[row, column]` were row and column each include the (start:stop:step) like in arrays
 - We can sepecify the type with the `.astype(np.float_)`
 - For a full list of Numpy types, see [documentation](http://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html)
@@ -257,7 +272,8 @@ print(data)
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```#We can slice the array several different ways and generate new variables.
+```python
+#We can slice the array several different ways and generate new variables.
 
 irisdata=data[0::,0:4:].astype(np.float_)  #This will select only the first 4 columns and change the type to float
 irisdata=data[:,0:4].astype(np.float_)
@@ -273,7 +289,8 @@ print(irisdata,'\n',iristype)
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```#This can be used to select column 1 and assign to new variable. 
+```python
+#This can be used to select column 1 and assign to new variable. 
 #This will sum up column 1
 newvariable=irisdata[::,0:1:]
 
@@ -293,7 +310,8 @@ print(final)
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
-```#This will take the mean of column 1
+```python
+#This will take the mean of column 1
 print('mean:', irisdata[::,0:1:].mean())
 
 ```
@@ -303,11 +321,12 @@ print('mean:', irisdata[::,0:1:].mean())
 
 
 
-## CREDITS
-
-
+## Credits
+---
 Copyright [AnalyticsDojo](http://rpi.analyticsdojo.com) 2016
 This work is licensed under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license agreement.
 
 
+
+<a href="https://colab.research.google.com/github/rpi-techfundamentals/spring2019-materials/blob/master/02-intro-python/03-intro-python-numpy.ipynb" target="_blank"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"> </a>
 

@@ -43,7 +43,7 @@ Common formatting syntax include:
 
 * Bookending text with `*` will make it * *italic* *
 * Bookending text with `**` will make it ** **bold** **
-* Adding `#` in front of a line will make it a header (`##` will make a secondary header, `###` will make a tertiary header, etc.
+* Adding `#` in front of a line will make it a header (`##` will make a secondary header, `###` will make a tertiary header, etc.)
 * To apply LaTeX in your markdown, you can bookend your equation with _$_ `($...$)` like $c =\pi$
 
 You can find more markdown code in this [markdown cheatsheet.](https://guides.github.com/features/mastering-markdown)
@@ -75,7 +75,7 @@ pip install jupyter-book
 Then create your book by navigating to the directory you would like to create your book in and using the following line (replacing "yourbookname" with whatever you would like to name the book):
 
 ```
-jupyter-book build yourbookname
+jupyter-book create yourbookname
 ```
 
 Once made, you will see that the book generates many different folders and files. The main components to be concerned about are the `content` folder and the files named `_config.yml` and `/_data/toc.yml`. `Content` is where you put all of notebooks you create, and then `toc.yml` is the table of contents, which needs to be updated once all of the desired content is in the folder. For example, the following table of contents is for a book chapter called "Features":

@@ -1,12 +1,10 @@
 ---
-redirect_from:
-  - "/notebooks/time-series-basic"
-interact_link: content/C:\Users\sjgar\Documents\GitHub\jupyter-book\content\notebooks/time_series_basic.ipynb
+interact_link: content/C:\Users\sjgar\Documents\GitHub\jupyter-book\content\notebooks/timeseries.ipynb
 kernel_name: python3
 has_widgets: false
 title: 'Time Series Analysis'
 prev_page:
-  url: /notebooks/PCA
+  url: /notebooks/pca
   title: 'Principal Component Analysis'
 next_page:
   url: /team
@@ -15,51 +13,31 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 
 
-<head>
-    <title>Time Series Analysis</title>
-</head>
+<img src="https://raw.githubusercontent.com/RPI-DATA/website/master/static/images/rpilogo.png" alt="RPI LOGO" style="width:400px">
 
-
+<h1 style="text-align:center">Time Series Analysis</h1>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RPI-DATA/tutorials-intro/blob/master/website/Forecasting%20the%20Rossmann%20Store%20Sales.ipynb)
-<img src="https://raw.githubusercontent.com/RPI-DATA/website/master/static/images/rpilogo.png" alt="RPI LOGO">
 
 
 
-# Time Series Analysis
-- - - - - - - -- - - - - - - -- - - - - - - - - - - 
 A **_time series_** is a series of data points indexed (or listed or graphed) in time order. Time series analysis pertains to methods extracting meaningful statistics from time series data. This is commonly used for forecasting and other models.
 
 
 
-# Learning Objectives
-- - - - - - - - - - - - - -- - - - - - - - - - -
-1. Understand the uses of Time Series Analysis
+## Learning Objectives
+---
+1. Understand the uses of Time series analysis (TSA)
 2. Understand the pros and cons of various TSA methods, including differentiating between linear and non-linear methods.
-3. Apply the facebook prophet model and analyze the results on given rossman store data.
+3. Apply the Facebook prophet model and analyze the results on given Rossmann store data.
 
 
 
-# Sections
-- - - -- - - - - - - - - - - - - - -- - - - -
-1. [ Problem Description](#probdes)
-2. Exploratory Data Analysis
-  1. [Training Data](#edat)
-  2. [Store Data](#edasd)
-3. [Moving Average Model](#mam)
-4. [Facebook Prophet Model](#fpm)
-5. [Conclusion](#c)
-6. [References](#r)
+## Problem Description
+---
+We will use a database of the store Rossmann's sales for this notebook. The following is a description of data from the Kaggle website:
 
-
-
-<a id="probdes"></a>
-    
-# Problem Description
-- - - - -- -- - - - -   - - - - 
-We will use the rossman store sales database for this notebook. Following is the description of Data from the website:
-
-"Rossmann operates over 3,000 drug stores in 7 European countries. Currently, Rossmann store managers are tasked with predicting their daily sales for up to six weeks in advance. Store sales are influenced by many factors, including promotions, competition, school and state holidays, seasonality, and locality. With thousands of individual managers predicting sales based on their unique circumstances, the accuracy of results can be quite varied."
+> Rossmann operates over 3,000 drug stores in 7 European countries. Currently, Rossmann store managers are tasked with predicting their daily sales for up to six weeks in advance. Store sales are influenced by many factors, including promotions, competition, school and state holidays, seasonality, and locality. With thousands of individual managers predicting sales based on their unique circumstances, the accuracy of results can be quite varied.
 
 
 
@@ -1202,7 +1180,7 @@ plt.show()
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_37_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_35_0.png)
 
 </div>
 </div>
@@ -1296,7 +1274,7 @@ test_store.Sales.plot()
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_43_1.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_41_1.png)
 
 </div>
 </div>
@@ -1335,7 +1313,7 @@ Text(0.5, 1.0, 'Moving Average Forecast')
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_44_1.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_42_1.png)
 
 </div>
 </div>
@@ -1368,30 +1346,25 @@ The rolling average for our model is 1,915.88. This prediction seems to be very 
 
 
 
-<a id="fpm"></a>
-# Facebook Prophet Model
+## Facebook Prophet Model
 - - - - - - - -  - - - - -- - - -
-The Facebook Prophet package is designed to analyze time series data with daily observations, which can display patterns on different time scales. Prophet is optimized for business tasks with the following characteristics:
+Facebook Prophet is a forecasting package designed to analyze time series data with daily observations, which can display patterns on different time scales. Prophet is optimized for business tasks with the following characteristics:
 
-hourly, daily, or weekly observations with at least a few months (preferably a year) of history
-strong multiple 'human-scale' seasonalities: day of week and time of year
-important holidays that occur at irregular intervals that are known in advance (e.g. the Super Bowl)
-a reasonable number of missing observations or large outliers
-historical trend changes, for instance due to product launches or logging changes
-trends that are non-linear growth curves, where a trend hits a natural limit or saturates
+* hourly, daily, or weekly observations with at least a few months (preferably a year) of history,
+* strong multiple "human-scale" seasonalities: day of week and time of year,
+* important holidays that occur at irregular intervals that are known in advance (e.g. the Super Bowl), and a reasonable number of missing observations or large outliers
+* historical trend changes, for instance due to product launches or logging changes
+* trends that are non-linear growth curves, where a trend hits a natural limit or saturates
 inspired by https://research.fb.com/prophet-forecasting-at-scale/
 
 
 
-According to the "facebook research" website, there is four main component inside the facebook prophet model.
+According to the "Facebook Research" website, there is four main component inside the facebook prophet model.
 
-** A piecewise linear or logistic growth trend. 
-
-** A yearly seasonal component modeled using Fourier series. 
-
-** A weekly seasonal component using dummy variables.
-
-** A user-provided list of important holidays.
+1. A piecewise linear or logistic growth trend. 
+2. A yearly seasonal component modeled using Fourier series. 
+3. A weekly seasonal component using dummy variables.
+4. A user-provided list of important holidays.
 
 The method of combing different models into one makes the facebook prophet model much more precise and flexible.
 
@@ -1577,12 +1550,9 @@ sales_prophet.fit(sales)
 
 
 We will figure out the best forecasting by changing the value of changepoints.
-
-If we find that our model is is fitting too closely to our training data (overfitting), our data will not be able to generalize new data.
-
-If our model is not fitting closely enough to our training data (underfitting), our data has too much bias.
-
-Underfitting: increase changepoint to allow more flexibility Overfitting: decrease changepoint to limit flexibili
+* If we find that our model is is fitting too closely to our training data (overfitting), our data will not be able to generalize new data.
+* If our model is not fitting closely enough to our training data (underfitting), our data has too much bias.
+* Underfitting: increase changepoint to allow more flexibility Overfitting: decrease changepoint to limit flexibility.
 
 
 
@@ -1634,7 +1604,7 @@ plt.xlabel('Date'); plt.ylabel('Rossmann Sales'); plt.title('Rossmann Effect of 
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_60_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_58_0.png)
 
 </div>
 </div>
@@ -1679,7 +1649,7 @@ plt.title('Rossmann Sales');
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/time_series_basic_63_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_61_0.png)
 
 </div>
 </div>
@@ -1725,16 +1695,14 @@ We have listed out the most significant changepoints in our data. This is repres
 
 
 
-<a id="c"></a>
-# Conclusion
-- -- - - - - - -  - - 
-In this notebook, we made 2 different math model for the rossmann store sales dataset to forecast the future sales. Moving-average model brings us a basic understand of how the math model works, while facebook prophet model calculates the best solid result. Those math model will give us both of the rolling average and test model. 
+## Conclusion
+---
+In this notebook, we made two different math model for the Rossmann store sales dataset to forecast the future sales. Moving-average model brings us a basic understand of how the math model works, while facebook prophet model calculates the best solid result. Those math model will give us both of the rolling average and test model. 
 
 
 
-<a id="r"></a>
-# References
-- - - -  - -  - - - - - - - - -
+## References
+---
 The dataset is the rossmann store sales dataset from kaggle:
 https://www.kaggle.com/c/rossmann-store-sales
 
@@ -1743,10 +1711,7 @@ https://research.fb.com/prophet-forecasting-at-scale/
 
 
 
-
-
-# Contributers
-
+## Contributers
 * nickespo21
 * Linghao Dong
 * Jose Figueroa

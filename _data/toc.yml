@@ -53,10 +53,10 @@
     url: /notebooks/linearregression
     not_numbered: true
   - title: Principal Component Analysis
-    url: /notebooks/PCA
+    url: /notebooks/pca
     not_numbered: true
   - title: Time Series Analysis
-    url: /notebooks/time_series_basic
+    url: /notebooks/timeseries
     not_numbered: true
 
 - title: Our Team
