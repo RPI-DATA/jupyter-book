@@ -15,35 +15,47 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 [![AnalyticsDojo](https://github.com/rpi-techfundamentals/fall2018-materials/blob/master/fig/final-logo.png?raw=1)](http://rpi.analyticsdojo.com)
 
-<center><h1>Pytorch with the MNIST Dataset</h1></center>
+<center><h1>PyTorch with the MNIST Dataset</h1></center>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RPI-DATA/tutorials-intro/blob/master/website/04_pytorch_mnist.ipynb)
 
 
 
+**PyTorch** is a open-source library that takes the machine learning tools of Torch and adapts them for use in Python. The following code is adopted from the [PyTorch examples repository](https://github.com/pytorch/examples/). It is licensed under [BSD 3-Clause "New" or "Revised" License](https://github.com/pytorch/examples/blob/master/LICENSE).
+
+
+
 ## Learning Objectives
 ---
-1. Learn how to utilize Pytorch
+1. Learn how to utilize PyTorch
 2. Employ Pytorch in the creation of an image-recognition algorithm
 
 
 
-## MNIST
+## Problem Definition
 ---
-MNIST is a database of 70,000 images of handwritten numbers used to evaluate image processing techniques. From [Kaggle](https://www.kaggle.com/c/digit-recognizer): 
+To illustrate the computational power of PyTorch, we will take a crack at processing the MNIST database. **MNIST** is a database of 70,000 images of handwritten numbers used to evaluate image processing techniques. From [Kaggle](https://www.kaggle.com/c/digit-recognizer): 
 > MNIST ("Modified National Institute of Standards and Technology") is the de facto "hello world" dataset of computer vision. Since its release in 1999, this classic dataset of handwritten images has served as the basis for benchmarking classification algorithms. As new machine learning techniques emerge, MNIST remains a reliable resource for researchers and learners alike.
 
 <a title="By Josef Steppan [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:MnistExamples.png"><img width="512" alt="MnistExamples" src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png"/></a>
 
 
 
-This code is adopted from the pytorch examples repository. 
-It is licensed under BSD 3-Clause "New" or "Revised" License.
-Source: https://github.com/pytorch/examples/
-LICENSE: https://github.com/pytorch/examples/blob/master/LICENSE
+Check out this table from [Wikipedia](https://en.wikipedia.org/wiki/MNIST_database) to see what kind of machine learning methods generate good error rates.
 
-![](https://github.com/rpi-techfundamentals/fall2018-materials/blob/master/10-deep-learning/mnist-comparison.png?raw=1)
-Table from [Wikipedia](https://en.wikipedia.org/wiki/MNIST_database)
+
+
+## PyTorch vs. Tensorflow
+---
+PyTorch serves as a great tool for learning data science because of its flexibility when compared to other libraries. Below are a few points of comparison between PyTorch and another popular dataflow tool, Tensorflow:
+- PyTorch enables dynamic computational graphs, while Tensorflow's computation is static. This means that at runtime PyTorch defines the graph's structure, which can be changed depending on parameters like the input data. Conversely, Tensorflow needs to have the structure defined _before_ running. 
+- Tensorflow enables easier deployment and requires less memory because it only has to worry about computations at the end.
+
+
+
+## Setting up PyTorch
+---
+Start by installing PyTorch with the following command:
 
 
 
@@ -55,38 +67,17 @@ Table from [Wikipedia](https://en.wikipedia.org/wiki/MNIST_database)
 ```
 </div>
 
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
-{:.output_stream}
-```
-Requirement already satisfied: torch in /anaconda3/envs/carme/lib/python3.6/site-packages (0.3.0.post4)
-Requirement already satisfied: torchvision in /anaconda3/envs/carme/lib/python3.6/site-packages (0.2.0)
-Requirement already satisfied: pyyaml in /anaconda3/envs/carme/lib/python3.6/site-packages (from torch) (3.12)
-Requirement already satisfied: numpy in /anaconda3/envs/carme/lib/python3.6/site-packages (from torch) (1.12.1)
-Requirement already satisfied: pillow>=4.1.1 in /anaconda3/envs/carme/lib/python3.6/site-packages (from torchvision) (5.1.0)
-Requirement already satisfied: six in /anaconda3/envs/carme/lib/python3.6/site-packages (from torchvision) (1.11.0)
-[31mkaggle-cli 0.12.13 has requirement lxml<4.1,>=4.0.0, but you'll have lxml 3.8.0 which is incompatible.[0m
-[31mawscli 1.14.32 has requirement botocore==1.8.36, but you'll have botocore 1.9.7 which is incompatible.[0m
-[31mapache-airflow 1.9.0 has requirement bleach==2.1.2, but you'll have bleach 2.1.3 which is incompatible.[0m
-[31mapache-airflow 1.9.0 has requirement flask<0.12,>=0.11, but you'll have flask 0.12.2 which is incompatible.[0m
-[31mapache-airflow 1.9.0 has requirement jinja2<2.9.0,>=2.7.3, but you'll have jinja2 2.10 which is incompatible.[0m
-```
-</div>
-</div>
 </div>
 
 
 
-### Pytorch Advantages vs. Tensorflow
-- Pytorch enables dynamic computational graphs (which change be changed), while Tensorflow is static. 
-- Tensorflow enables easier deployment. 
+We will then import all of the libraries needed for our algorithm.
 
 
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
 ```python
-#Import Libraries
 from __future__ import print_function
 import argparse
 import torch
@@ -100,6 +91,10 @@ from torch.autograd import Variable
 </div>
 
 </div>
+
+
+
+Next we can define the arguments for our functions and then load in our data.
 
 
 

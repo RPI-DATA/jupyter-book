@@ -12,7 +12,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 ## Starting Up Jupyter Notebook
 ---
-
 To use the Jupyter notebook, you have to run the following command (in either _Terminal_ for Mac or _Command Prompt_ for Windows) to see the application in your web broswer:
 
 ```
@@ -31,7 +30,6 @@ Once open you will be greeted with the **dashboard**:
 
 ## Creating a New Notebook
 ---
-
 To open a new notebook, you can click on the "New" in the "Files" tab and choose the kernel you would like to use.
 
 The main user interface for the notebook looks like this:
@@ -46,7 +44,7 @@ Common formatting syntax include:
 * Adding `#` in front of a line will make it a header (`##` will make a secondary header, `###` will make a tertiary header, etc.)
 * To apply LaTeX in your markdown, you can bookend your equation with _$_ `($...$)` like $c =\pi$
 
-You can find more markdown code in this [markdown cheatsheet.](https://guides.github.com/features/mastering-markdown)
+You can find more markdown code in this [markdown cheatsheet](https://guides.github.com/features/mastering-markdown).
 
 Additionally, for code cells you can use the following shortcuts:
 
@@ -63,9 +61,13 @@ Once you're done with your notebook, you can export it to html to contribute it 
 jupyter nbconvert --to html --template basic [your notebook's title].ipynb
 ```
 
+### Teaching with Jupyter
+Teaching with a new medium opens up a variety of different techniques one can use to best get the message across. The [Teaching and Learning with Jupyter](https://jupyter4edu.github.io/jupyter-edu-book/index.html) book is a great resource for those wishing to explore what types of lessons other professors use in Jupyter, and can be very useful to consult when designing notebooks.
+
+The following notebook examples document the different _pedagogical patterns_ the book outlines in Chapter 4 to showcase how they might be used.
+
 ## Creating a Jupyter Book
 ---
-
 If you have a collection of notebooks you want to share with students, you can create a Jupyter Book that organizes them all in a single hub and narrative structure. To do so, first install the Book CLI using the Anaconda command line. Specifically, run the following command:
 
 ```
@@ -106,13 +108,10 @@ This command will take the chapters you outlined in the `toc.yml` file and autom
 
 
 ### 1. Build your site on Github
-
 To build your site using Github Pages, start by creating a repository and cloning it to your local machine. Then copy all of the files and folders in your `yourbookname` folder into the new repository and push it to Github. In Github, go to the Settings of your repository (found near the top right of the page) and scroll down to the Github Pages section. Then select the `master branch` under the Source dropdown. If your `_config.yml` file is configured correctly, then the URL provided should take you to your newly created website.
 
 ### 2. Build your site locally
-
 This is helpful if you want to preview the results before pushing it online. Doing this, however, will require a third-party application (either a container like Docker or Singularity, or the Ruby programming language). For a guide on how to build your site locally, check out [this guide](https://jupyter.org/jupyter-book/guide/03_build.html#build-the-books-site-html-locally).
 
 ### Automatic Jupyter Book Generator
-
 If the prospect of designing a website around your notebooks seems too daunting, you can use our Excel spreadsheet to create the pages for you. The sheet includes tabs that you can populate with general class information, the class schedule, and any assignments or projects. Follow the documentation found in the site's [repository](https://github.com/RPI-DATA/course-intro-ml-app) to learn how to create your own book.

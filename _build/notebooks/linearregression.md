@@ -7,7 +7,7 @@ prev_page:
   url: /notebooks/pytorch
   title: 'PyTorch'
 next_page:
-  url: /notebooks/PCA
+  url: /notebooks/pca
   title: 'Principal Component Analysis'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -23,13 +23,17 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 This project will work on how to predict the prices of homes based on the properties of the house. I will determine which house affected the final sale price and how effectively we can predict the sale price.
 
+This Notebook uses the following pedagogical patterns:
+* [**4.2** Shift-enter for the Win](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#shift-enter-for-the-win)
+* [**4.8** Top-down Sequence](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#top-down-sequence)
+
 
 
 ## Learning Objectives
 ---
 By the end of this notebook, the reader should be able to perform Linear Regression techniques in Python. This includes:
 
-1. Importing and formating data
+1. Importing and formatting data
 2. Training the LinearRegression model from the `sklearn.linear_model` library
 3. Work with qualitative and quantitative data, and effectively deal with instances of categorical data
 4. Analyze and determine proper handling of redundant and/or inconsistent data features
@@ -41,24 +45,24 @@ By the end of this notebook, the reader should be able to perform Linear Regress
 ---
    
 For this exercise we will use the Ames Housing dataset to delineate our training and testing data. The Ames dataset is a collection of different characteristics and observations on houses in Ames, Iowa that is commonly used to create and test algorithms for predicting the prices of homes in that area. It contains 82 columns, or features, of data that describe the residences, such as:
-- Lot Area: Lot size in square feet
-- Overall Qual: Rates the overall material and finish of the house
-- Overall Cond: Rates the overall condition of the house
-- Year Built: Original construction date
-- Low Qual Fin SF: Low quality finished square feet (all floors)
-- Full Bath: Full bathrooms above grade
-- Fireplaces: Number of fireplaces
+- _Lot Area_: Lot size in square feet
+- _Overall Qual_: Rates the overall material and finish of the house
+- _Overall Cond_: Rates the overall condition of the house
+- _Year Built_: Original construction date
+- _Low Qual Fin SF_: Low quality finished square feet (all floors)
+- _Full Bath_: Full bathrooms above grade
+- _Fireplaces_: Number of fireplaces
 
 and so on.
 
-We will import this dataset using the `pandas` library, which is an open-source data analytics tool for Python that allows the use of `dataframe` objects and clean file parsing. This is done with the following lines of code:
+We will import this dataset using the `pandas` library, which is an open-source data analytics tool for Python that allows the use of `dataframe` objects and clean file parsing. Libraries in general are simply collections of functions in Python that users can import instead of having to write out the code themselves. This is done with the following lines of code:
 
 
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
 ```python
-import pandas as pd
+import pandas as pd   # The 'as' renames the library to whatever follows, in this case 'pd' to simplify the syntax
 data = pd.read_csv("data/AmesHousing.txt", delimiter = '\t')
 
 ```
@@ -184,9 +188,18 @@ None
 
 
 
-## Model the Data (with a Simple Regression)
+## Model the Data
 --- 
-In this case, we will use a **simple linear regression** to evaluate the relationship between two variables: living area ("Gr Liv Area") and price ("SalePrice"). The `linearRegression.fit()` function (from the scikit learning library) is pretty convenient in that it can turn the input data into a linear function without needing to worry about the calculation. We can also use the `mean_squared_error` function to get the total variance of the linear function, which can be found in the `numpy` library.
+###  Simple Regression
+In this case, we will use a **simple linear regression** to evaluate the relationship between two variables: living area ("Gr Liv Area") and price ("SalePrice"). Assuming a linear relationship, the equation for the two variables will of course look like this:
+
+$$
+y = mx + b
+$$
+
+where $x$ is the independent variable ("Gr Liv Area"), $y$ is the dependent ("SalePrice"), $m$ is the slope, and $b$ is the intercept. Because these variables are data and thus cannot be changed, a linear regression looks to control $m$ and $b$ instead. Essentially, a linear regression simply changes these two terms to fit multiple lines onto the data, reviews the error between the line and the data points, and then returns the line that generates the least amount of error.
+
+In Python, the function that performs the regression is `linearRegression.fit()`, which can be found in the scikit learning library. Simply include the two variables as arguments and it will find the line that best fits for you. We can also use the `mean_squared_error` function to get the total variance of the linear function, which can be found in the `numpy` library.
 
 
 
@@ -194,7 +207,7 @@ In this case, we will use a **simple linear regression** to evaluate the relatio
 <div class="input_area" markdown="1">
 ```python
 import numpy as np
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression   # You can use this method to directly call for a function in a library
 
 lr = LinearRegression()
 lr.fit(train[['Gr Liv Area']], train['SalePrice'])
@@ -313,13 +326,12 @@ testPlot
 
 
 
-Since the data looks like it concentrates around the linear regression model, we can conclude that the model can predict the "Sale Price".
+Since the test data looks like it concentrates around the linear regression model, we can conclude that the model can predict the "Sale Price".
 
 
 
-## Model the Data (with a Multiple Regression)
-- - - - - - - - -- - - -- -
-In the real world, **multiple regression** is a more useful technique since we need to evaluate more than one correlation in most cases. Now, we will still predict the SalePrice, but with one more variable - Overall Condition (Overall Cond). In this case the model will be a **binary linear equation** in the form of:
+### Multiple Regression
+In the real world, a **multiple regression** is a more useful technique since we need to evaluate more than one correlation in most cases. Now, we will still predict the SalePrice, but with one more variable - Overall Condition (Overall Cond). In this case the model will be a **binary linear equation** in the form of:
 
 $$
 Y = a_0 + coef_{Cond} * (Overall Cond) + coef_{Area} * (Gr Liv Area)
@@ -370,11 +382,12 @@ $$
 Y = 7858.7 - 409.6 * (Overall Cond) + 116.7 * (Gr Liv Area)
 $$
 
-However, it's hard to make a geometric explanation since the model will be either surface or high-dimension which cant be plotted. 
+However, it's hard to make a geometric explanation since the model will be either surface or high-dimension which can't be plotted. 
 
 
 
-## Handling data types with missing values/non-numeric values
+## Handling Data Types with Missing/Non-numeric Values
+---
 In the machine learning workflow, once we've selected the model we want to use, selecting the appropriate features for that model is the next important step. In the following code snippets, I will explore how to use correlation between features and the target column, correlation between features, and variance of features to select features.
 
 I will specifically focus on selecting from feature columns that don't have any missing values or don't need to be transformed to be useful (e.g. columns like Year Built and Year Remod/Add). 
@@ -430,8 +443,7 @@ dtype: int64
 
 
 
-## Correlating feature columns with Target Columns
-- - - - - - - --- - -- - - - - -  -
+### Correlating Feature Columns with Target Columns
 I will show the the correlation between feature columns and target columns(SalesPrice) by percentage. 
 
 
@@ -485,12 +497,12 @@ Name: SalePrice, dtype: float64
 
 
 
-## Correlation Matrix Heatmap
+### Correlation Matrix Heatmap
 We now have a decent list of candidate features to use in our model, sorted by how strongly they're correlated with the SalePrice column. For now, I will keep only the features that have a correlation of 0.3 or higher. This cutoff is a bit arbitrary and, in general, it's a good idea to experiment with this cutoff. For example, you can train and test models using the columns selected using different cutoffs and see where your model stops improving.
 
-The next thing we need to look for is for potential collinearity between some of these feature columns. Collinearity is when 2 feature columns are highly correlated and stand the risk of duplicating information. If we have 2 features that convey the same information using 2 different measures or metrics, we need to choose just one or predictive accuracy can suffer.
+The next thing we need to look for is for potential collinearity between some of these feature columns. Collinearity is when two feature columns are highly correlated and stand the risk of duplicating information. If we have two features that convey the same information using two different measures or metrics, we need to choose just one or predictive accuracy can suffer.
 
-While we can check for collinearity between 2 columns using the correlation matrix, we run the risk of information overload. We can instead generate a correlation matrix heatmap using Seaborn to visually compare the correlations and look for problematic pairwise feature correlations. Because we're looking for outlier values in the heatmap, this visual representation is easier.
+While we can check for collinearity between two columns using the correlation matrix, we run the risk of information overload. We can instead generate a correlation matrix heatmap using Seaborn to visually compare the correlations and look for problematic pairwise feature correlations. Because we're looking for outlier values in the heatmap, this visual representation is easier.
 
 
 
@@ -532,14 +544,13 @@ ax
 
 
 
-## Train and Test the model
+### Train and Test the Model
 Based on the correlation matrix heatmap, we can tell that the following pairs of columns are strongly correlated:
 
 - Gr Liv Area and TotRms AbvGrd
 - Garage Area and Garage Cars
 
 We will only use one of these pairs and remove any columns with missing values
-
 
 
 
@@ -582,7 +593,8 @@ print(test_rmse)
 
 
 
-## Removing low variance features
+## Removing Low Variance Features
+---
 The last technique I will explore is removing features with low variance. When the values in a feature column have low variance, they don't meaningfully contribute to the model's predictive capability. On the extreme end, let's imagine a column with a variance of 0. This would mean that all of the values in that column were exactly the same. This means that the column isn't informative and isn't going to help the model make better predictions.
 
 To make apples to apples comparisions between columns, we need to standardize all of the columns to vary between 0 and 1. Then, we can set a cutoff value for variance and remove features that have less than that variance amount.
@@ -619,7 +631,7 @@ dtype: float64
 
 
 
-## Final Model
+### Final Model
 Let's set a cutoff variance of 0.015, remove the Open Porch SF feature, and train and test a model using the remaining features.
 
 
@@ -627,7 +639,6 @@ Let's set a cutoff variance of 0.015, remove the Open Porch SF feature, and trai
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
 ```python
-
 features = features.drop(['Open Porch SF'])
 
 clean_test = test[final_corr_cols.index].dropna()
@@ -676,7 +687,7 @@ $$
 
 ## Feature Transformation
 ---
-To understand how linear regression works, I have stuck to using features from the training dataset that contained no missing values and were already in a convenient numeric representation. In this mission, we'll explore how to transform some of the the remaining features so we can use them in our model. Broadly, the process of processing and creating new features is known as feature engineering.
+To understand how linear regression works, I have stuck to using features from the training dataset that contained no missing values and were already in a convenient numeric representation. In this section, we'll explore how to transform some of the the remaining features so we can use them in our model. Broadly, the process of processing and creating new features is known as feature engineering.
 
 
 
@@ -696,8 +707,8 @@ df_no_mv = train[train_null_counts[train_null_counts==0].index]
 
 
 
-## Categorical Features
-You'll notice that some of the columns in the data frame df_no_mv contain string values. To use these features in our model, we need to transform them into numerical representations
+### Categorical Features
+You'll notice that some of the columns in the data frame df_no_mv contain string values. To use these features in our model, we need to transform them into numerical representations:
 
 
 
@@ -769,11 +780,26 @@ dtype: int64
 
 
 
-## Dummy Coding
+### Dummy Coding
 When we convert a column to the categorical data type, pandas assigns a number from 0 to n-1 (where n is the number of unique values in a column) for each value. The drawback with this approach is that one of the assumptions of linear regression is violated here. Linear regression operates under the assumption that the features are linearly correlated with the target column. For a categorical feature, however, there's no actual numerical meaning to the categorical codes that pandas assigned for that colum. An increase in the Utilities column from 1 to 2 has no correlation value with the target column, and the categorical codes are instead used for uniqueness and exclusivity (the category associated with 0 is different than the one associated with 1).
 
-The common solution is to use a technique called dummy coding
+The common solution is to use a technique called _dummy coding_. Dummy coding takes a categorical variable and turns it into a set of dichotomous (0 or 1) variables. For example, if we were to look at feature of 'House Style' we would see that there are three participants, each with a nominal variable:
 
+| Style | Code  |
+| ----- | ----- |
+| 1 Floor | 1 |
+| 1.5 Floors | 2 |
+| 2 Floors | 3 |
+
+can be made useful by setting 1 Floor as a baseline and then comparing the other categories to that baseline, like so:
+
+| Style | 1.5 Floors | 2 Floors |
+| :---: | :--------: | :------: |
+| 1.5 Floors | 1 | 0 |
+| 2 Floors | 0 | 1 |
+| 1 Floor | 0 | 0 |
+
+The pandas function `.get_dummies` will perform this conversion automatically:
 
 
 
@@ -806,6 +832,7 @@ train['years_until_remod'] = train['Year Remod/Add'] - train['Year Built']
 
 
 ## Missing Values
+---
 Now I will focus on handling columns with missing values. When values are missing in a column, there are two main approaches we can take:
 
 - Remove rows containing missing values for specific columns
@@ -883,9 +910,8 @@ dtype: object
 
 
 
-## Inputing missing values
----
-It looks like about half of the columns in df_missing_values are string columns (object data type), while about half are float64 columns. For numerical columns with missing values, a common strategy is to compute the mean, median, or mode of each column and replace all missing values in that column with that value
+### Inputing Missing Values
+It looks like about half of the columns in `df_missing_values` are string columns (object data type), while about half are float64 columns. For numerical columns with missing values, a common strategy is to compute the mean, median, or mode of each column and replace all missing values in that column with that value. So we will take the float64 columns and fill all of the missing values with the mean using the function `df_missing_values.mean()`:
 
 
 
@@ -917,6 +943,10 @@ dtype: int64
 </div>
 </div>
 </div>
+
+
+
+And as you can see from the print statement, now all of the float64 columns are without missing values. 
 
 
 

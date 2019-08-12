@@ -33,13 +33,9 @@ It is also possible to run Docker on your laptop, mirroring the same compute env
 Git is a version control system use to track changes to code, and when combined with Github it is an extremely powerful way to collaborate.	
 
  1. Install the [git command line tool](https://git-scm.com/downloads). There are a lot of options but you should be able to just utilize the defaults.	
-
  2. Create an account on [github.com](https://github.com).	
-
  3. Install Github desktop if using OSX or Windows. [Click here for download instructions for Github Desktop](https://desktop.github.com/).	
-
  4. Once you are done installing Github desktop, open the program.  Sign in with your Github Credentials to link the desktop application with your Github account.	
-
  5. Clone the [class repository](https://github.com/jkuruzovich/techfundamentals-spring2018-materials) either from the desktop tool or from the command line.	
 	From the Github tool:	
  	<img src="images/clone.png" alt="clone" style="width:400px">	
@@ -74,7 +70,7 @@ Follow the following instructions to install Anaconda from [Continuum Analytics]
 
 ### Windows
 	
-Windows may often have issues associated with installation if you have had previous versions of Anaconda installed.  If it doesn't work, start by uninstalling everything	
+Windows may often have issues associated with installation if you have had previous versions of Anaconda installed.  If it doesn't work, start by uninstalling everything.
 
 1. Follow the online instructions to [install the Anaconda Distribution with Python 3.6](https://docs.continuum.io/anaconda/install/windows)	
 2. Follow below for [advanced configuration](#advanced-configuration).	
@@ -87,62 +83,37 @@ If you are a Linux user, please help in supporting the class. You likely won't n
 2. Follow below for [advanced configuration](#advanced-configuration).	
 
 
-### Advanced Configuration	
+### Advanced Configuration
 
-* Windows users, open an 'Anaconda Prompt'.  Mac/Linux users open a standard terminal.	
+Start by opening a standard terminal, or if you're a Windows users, open an 'Anaconda Prompt'.	
 
-* Change directories to the `techfundamentals-spring2018-materials` folder you cloned earlier:	
-
+1. Change directories to the `techfundamentals-spring2018-materials` folder you cloned earlier by entering the following:	
 ```	
 cd <insert full path >\techfundamentals-spring2018-materials	
 ```
+* For the above, changing directories differs for Windows or Mac users. For example, on a Mac it might be: `cd /Users/jasonkuruzovich/githubdesktop/techfundamentals-spring2018-materials`
+* On Windows, if you have a space somewhere in your path make sure that you include quotes:	`cd "c:\Users\jasonkuruzovich\github\techfundamentals-spring2018-materials"`
 
-For the above, changing directories differs for Windows or Mac users. For example, on a Mac it might be:
-
-```	
-cd /Users/jasonkuruzovich/githubdesktop/techfundamentals-spring2018-materials	
-```	
-On Windows, if you have a space somewhere in your path make sure that you include quotes:	
-
-```	
-cd "c:\Users\jasonkuruzovich\github\techfundamentals-spring2018-materials"	
-```	
-
-* Install required packages. First install pip, which is a package manager similar to conda.
-
+2. Install required packages. First install pip, which is a package manager similar to conda:
 ```	
 conda install -c anaconda pip	
 ```	
 
-Then, from the repository install all the packages in requirements.txt.	
-
+3. Then, from the repository install all the packages in requirements.txt.	
 ```	
 pip install -r requirements.txt	
 ```	
 
-* Launch a Jupyter notebook with the command:
-
+4. Launch a Jupyter notebook with the command:
 ```	
 jupyter notebook	
 ```	
-You will need to run c-d each time to launch Jupyter.	
+* You will need to run c-d each time to launch Jupyter.	
 
-* There may be some other packages you still have to install.  You will know this is an issue if an `import` command fails.  You can install packages with:
-
-```	
-conda install <packagename>	
-```	
-or
-
-```	
-pip install <packagename>	
-```	
-
-For example, to install the R Kernal for Jupyter, install the r-essentials package:	
+There may be some other packages you still have to install.  You will know this is an issue if an `import` command fails.  You can install packages with: `conda install <packagename>` or `pip install <packagename>`. For example, to install the R Kernal for Jupyter, install the r-essentials package:
 
 ```	
 conda install r-essentials	
 ```	
 
-Please feel free to post issues on the Slack channel.	
-Follow the instructions to install [git/GitHub Desktop](/setup/git/) and [Anaconda](/setup/anaconda).
+Please feel free to post issues on the Slack channel.

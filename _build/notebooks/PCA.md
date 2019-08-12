@@ -1,7 +1,5 @@
 ---
-redirect_from:
-  - "/notebooks/pca"
-interact_link: content/C:\Users\sjgar\Documents\GitHub\jupyter-book\content\notebooks/PCA.ipynb
+interact_link: content/C:\Users\sjgar\Documents\GitHub\jupyter-book\content\notebooks/pca.ipynb
 kernel_name: python3
 has_widgets: false
 title: 'Principal Component Analysis'
@@ -9,7 +7,7 @@ prev_page:
   url: /notebooks/linearregression
   title: 'Linear Regression'
 next_page:
-  url: /notebooks/time_series_basic
+  url: /notebooks/timeseries
   title: 'Time Series Analysis'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -596,7 +594,7 @@ plt.axis('equal') # equal scaling on both axes
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/PCA_23_1.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_23_1.png)
 
 </div>
 </div>
@@ -734,7 +732,7 @@ plt.axis('equal');
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/PCA_32_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_32_0.png)
 
 </div>
 </div>
@@ -1036,7 +1034,7 @@ for i in range(0,4):
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/PCA_42_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_42_0.png)
 
 </div>
 </div>
@@ -1139,7 +1137,7 @@ plt.gca().set_aspect('equal')
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/PCA_49_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_49_0.png)
 
 </div>
 </div>
@@ -1171,7 +1169,7 @@ for i in range(4):
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/PCA_51_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_51_0.png)
 
 </div>
 </div>
@@ -1246,7 +1244,7 @@ for i in range(4):
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/PCA_56_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_56_0.png)
 
 </div>
 </div>
@@ -1316,7 +1314,7 @@ plt.gca().set_aspect('equal')
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/PCA_59_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_59_0.png)
 
 </div>
 </div>

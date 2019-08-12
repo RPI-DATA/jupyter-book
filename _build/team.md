@@ -1,7 +1,7 @@
 ---
 title: 'Our Team'
 prev_page:
-  url: /notebooks/time_series_basic
+  url: /notebooks/timeseries
   title: 'Time Series Analysis'
 next_page:
   url: /faq
