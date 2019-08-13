@@ -23,7 +23,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 This project will work on how to predict the prices of homes based on the properties of the house. I will determine which house affected the final sale price and how effectively we can predict the sale price.
 
-This Notebook uses the following pedagogical patterns:
+This notebook uses the following pedagogical patterns:
 * [**4.2** Shift-enter for the Win](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#shift-enter-for-the-win)
 * [**4.8** Top-down Sequence](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#top-down-sequence)
 

@@ -23,6 +23,10 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 **PyTorch** is a open-source library that takes the machine learning tools of Torch and adapts them for use in Python. The following code is adopted from the [PyTorch examples repository](https://github.com/pytorch/examples/). It is licensed under [BSD 3-Clause "New" or "Revised" License](https://github.com/pytorch/examples/blob/master/LICENSE).
 
+This notebook uses the following pedagogical patterns:
+* [**4.2** Shift-enter for the win](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#shift-enter-for-the-win)
+* [**4.15** The world is your dataset](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#the-world-is-your-dataset)
+
 
 
 ## Learning Objectives

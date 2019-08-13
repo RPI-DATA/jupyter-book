@@ -21,7 +21,11 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 
 
-This notebook was adapted from [amueller's](https://github.com/amueller) notebook, *"1 - PCA"*. Here is the link to his repository: https://github.com/amueller/tutorial_ml_gkbionics.git. This notebook provides examples for eigenvalues and eigenvectors in LaTeX and python.
+**_Principal Component Analysis (PCA)_** can always be used to simplify data with high dimensions (larger than two) into two-dimensional data by eliminating the least influential features on the data. However, we should know the elimination of data makes the independent variable less interpretable. This notebook was adapted from [amueller's](https://github.com/amueller) notebook, *"1 - PCA"*. Here is the link to his repository: https://github.com/amueller/tutorial_ml_gkbionics.git.
+
+This notebook uses the following pedagogical patterns:
+* [**4.10** Coding as translation](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#coding-as-translation)
+* [**4.16** Now you try (with different data or process)](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#now-you-try-with-different-data-or-process)
 
 
 
@@ -33,15 +37,9 @@ This notebook was adapted from [amueller's](https://github.com/amueller) noteboo
 
 
 
-## PCA
----
-PCA can always be used to simplify the data with high dimensions (larger than 2) into 2-dimensional data by eliminating the least influntial features on the data. However, we should know the elimination of data makes the independent variable less interpretable. Before we start to deal with the PCA, we need to first learn how PCA utilizes eigenvectors to gain a diagonalization covariance matrix.
-
-
-
 ## Eigenvectors
 --- 
-Eigenvectors and eigenvalues are the main tools used by PCA to obtain a diagnolization covariance matrix. An eigenvector is a vector whose direction will not be affected by a linear transformation. *Eigenvectors* represents the direction of the largest variance of data, while the corresponding *eigenvalue* decides the magnitude of this variance in those directions.
+Before we start to deal with the PCA, we need to first learn how PCA utilizes eigenvectors to gain a diagonalization covariance matrix. Eigenvectors and eigenvalues are the main tools used by PCA to obtain a diagnolization covariance matrix. An eigenvector is a vector whose direction will not be affected by a linear transformation. *Eigenvectors* represents the direction of the largest variance of data, while the corresponding *eigenvalue* decides the magnitude of this variance in those directions.
 
 Here we using a simple (2x2) matrix $A$ to explain it.
 $$
@@ -594,7 +592,7 @@ plt.axis('equal') # equal scaling on both axes
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_23_1.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_22_1.png)
 
 </div>
 </div>
@@ -732,7 +730,7 @@ plt.axis('equal');
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_32_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_31_0.png)
 
 </div>
 </div>
@@ -768,7 +766,7 @@ print (np.cov(X_pca, rowvar=False))
 ## High-Dimensional Data
 ---
 
-Our small example above was very easy, since we could get insight into the data by simply plotting it. This approach, however, will not work once you have more than three dimensions. Let's use the famous Iris Dataset, which is used to recognize the iris plant and has the following four dimensions:
+Our small example above was very easy, since we could get insight into the data by simply plotting it. This approach, however, will not work once you have more than three dimensions. Now, let's use the famous Iris Dataset, which is used to recognize the iris plant and has the following four dimensions:
  * Sepal Length
  * Sepal Width
  * Pedal Length
@@ -790,7 +788,7 @@ iris_HD = np.matrix([np.array(val.split(',')[:4]).astype(float) for val in data[
 
 
 
-Lets look at the data again. First, the raw data:
+Let's look at the data again. First, the raw data:
 
 
 
@@ -823,7 +821,7 @@ print (iris_HD[:10])
 
 
 
-Since each dimension has different scale in the Iris Dataset, we can use `StandardScaler` to standard the unit of all dimension onto unit scale.
+Since each dimension has different scale in the Iris Dataset, we can use `StandardScaler` to standardize the data points of all dimensions to have unit variance.
 
 
 
@@ -1034,7 +1032,7 @@ for i in range(0,4):
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_42_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_41_0.png)
 
 </div>
 </div>
@@ -1079,11 +1077,11 @@ print (X_HE[:10,:])
 
 
 
-By looking at the data after PCA, it is easy to see the value of last two dimension, especially the last one, is pretty small such that the data can be considered as **still only two-dimensional**. To prove this we can use the code `PCA(0.95)` to told PCA choose the least number of PCA components such that 95% of the data can be kept.
+By looking at the data after PCA, it is easy to see the value of last two dimension, especially the last one, is pretty small such that the data can be considered as **still only two-dimensional**. To prove this we can use the code `PCA(0.95)`, which will make the function choose the minimum amount of PCA components such that 95% of the data can be kept.
 
 
 
-Lets give a try on it!
+Let's give it a try!
 
 
 
@@ -1118,7 +1116,7 @@ print (X_95[:10,:])
 
 
 
-We can see that PCA eliminate ** the last two dimension** cause they are redundant under our requirment. Let's plot the two dimension
+We can see that PCA eliminates the **last two dimensions** because they are redundant for our requirements. Let's plot the two dimensions.
 
 
 
@@ -1137,7 +1135,7 @@ plt.gca().set_aspect('equal')
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_49_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_48_0.png)
 
 </div>
 </div>
@@ -1169,7 +1167,7 @@ for i in range(4):
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_51_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_50_0.png)
 
 </div>
 </div>
@@ -1177,16 +1175,14 @@ for i in range(4):
 
 
 
-It is easy to see that the correlation between other dimensions (other than first two) was ambiguous and highly concentrated in either horizontal or vertical line. This fact suggests that there are large difference between the dimension we select so that **the weak dimension can't change too much on the shape of graph**. 
+It is easy to see that the correlations between the other dimensions (other than the first two) are ambiguous and highly concentrated in either horizontal or vertical lines. This fact suggests that there are large differences between the dimensions we selected, and that the weaker dimensions, by contrast, **can't impact the shape of the graph too much**. 
 
 
 
 ## Dimension Reduction with PCA
 ---
 
-We can see that there are actually only two dimensions in the dataset. 
-
-Let's throw away even more data - the second dimension - and reconstruct the original data in `D`.
+We have now seen that there are actually only two useful dimensions in the dataset. Let's throw away even more data - the second dimension - and reconstruct the original data in `D`.
 
 
 
@@ -1221,7 +1217,7 @@ print (X_E[:10,:])
 
 
 
-Now lets plot the reconstructed data and compare to the original data D. We plot the original data in red, and the reconstruction with only one dimension in blue:
+Now let's plot the reconstructed data and compare to the original data D. We plot the original data as was, and the reconstruction with only one dimension in purple:
 
 
 
@@ -1244,7 +1240,7 @@ for i in range(4):
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_56_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_55_0.png)
 
 </div>
 </div>
@@ -1254,10 +1250,10 @@ for i in range(4):
 
 ## Homework
 ---
-1. Do the PCA reduction on the ramdon 6-dimension data and plot it out.
+1. Do the PCA reduction on the random 6-dimension data and plot it out.
 2. Explan what PCA does on your data.
 
-*The code for data are given.
+*The code for data is given below.
 
 
 
@@ -1314,7 +1310,7 @@ plt.gca().set_aspect('equal')
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_59_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/pca_58_0.png)
 
 </div>
 </div>
@@ -1322,7 +1318,11 @@ plt.gca().set_aspect('equal')
 
 
 
-Contributers: Linghao Dong, Josh Beck, Jose Figueroa, Yuvraj Chopra
+## Conclusion
+---
+In this notebook we used PCA to a simplify a complex dataset into only the essential dimensions. We saw how eliminating dimensions impacts both the 
+
+**Contributers:** Linghao Dong, Josh Beck, Jose Figueroa, Yuvraj Chopra
 
 
 

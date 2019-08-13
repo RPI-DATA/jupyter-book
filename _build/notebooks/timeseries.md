@@ -23,6 +23,10 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 A **_time series_** is a series of data points indexed (or listed or graphed) in time order. Time series analysis pertains to methods extracting meaningful statistics from time series data. This is commonly used for forecasting and other models.
 
+This notebook uses the following pedagogical patterns:
+* [**4.2** Shift-enter for the win](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#shift-enter-for-the-win)
+* [**4.15** The world is your dataset](https://jupyter4edu.github.io/jupyter-edu-book/catalogue.html#the-world-is-your-dataset)
+
 
 
 ## Learning Objectives
@@ -87,10 +91,9 @@ store = pd.read_csv('https://raw.githubusercontent.com/RPI-DATA/tutorials-intro/
 
 
 
-<a id="edat"></a>
-
-# Exploratory Data Analysis (Train)
-- - - - - - - - - --  - - - - - - -  - - - - - - - - --  - - -- - - -
+## Exploratory Data Analysis
+---
+### Training Set
 We start by seeing what our data conists of. We want to see which variables are continuous vs which are categorical. After exploring some of the data, we see that we can create a feature. Number of sales divided by customers could give us a good metric to measure average sales per customer. We can also make an assumption that if we have missing values in this column that we have 0 customers. Since customers drive sales, we elect to remove all of these values.
 
 Notice the order in which the data is listed. It is ordered from most recent date to oldest date. This may cause a problem when we look to develop our model.
@@ -739,9 +742,7 @@ train.dropna().head()
 
 
 
-<a id="edasd"></a>
-# Exploratory Data Analysis (Store Data)
-- - - - - -- - - - - - - - - - - - - -  - - - - - - - - - -
+### Store Data
 We do the same as we did for our training set. Exploring the data, we see that there are only 3 missing values in CompetitionDistance. Because this is such a small amount, we elect to replace these with the mean of the column. The other missing values are all dependent on Promo2. Because these missing values are because Promo2 is equal to 0, we can replace these nulls with 0.
 
 
@@ -1096,9 +1097,8 @@ train = train.merge(right=store, on='Store', how='left')
 
 
 
-<a id="mam"></a>
-# Moving-Average Model (Naive Model)
-- - - - - - - - - - - - - - -
+## Moving-Average Model (Naive Model)
+---
 We are going to be using a moving average model for the stock prediction of GM for our baseline model. The moving average model will take the average of different "windows" of time to come up with its forecast
 
 We reload the data because now we have a sense of how we want to maniplate it for our model. After doing the same data manipulation as before, we start to look at the trend of our sales. 
@@ -1209,9 +1209,9 @@ train['sales'] = 0
 
 
 
-Split the data into a train and test set. We use an 80/20 split. Then, we look to start are modein. 
+Split the data into a train and test set. We use an 80/20 split. Then, we look to start modeling. 
 
-test_store stands for the forecasting part. 
+`test_store` stands for the forecasting part. 
 
 
 
@@ -1357,8 +1357,6 @@ Facebook Prophet is a forecasting package designed to analyze time series data w
 * trends that are non-linear growth curves, where a trend hits a natural limit or saturates
 inspired by https://research.fb.com/prophet-forecasting-at-scale/
 
-
-
 According to the "Facebook Research" website, there is four main component inside the facebook prophet model.
 
 1. A piecewise linear or logistic growth trend. 
@@ -1368,9 +1366,7 @@ According to the "Facebook Research" website, there is four main component insid
 
 The method of combing different models into one makes the facebook prophet model much more precise and flexible.
 
-
-
-First of all, we will dealt with the data as same as the naive model
+First of all, we will dealt with the data as same as the naive model:
 
 
 
@@ -1604,7 +1600,7 @@ plt.xlabel('Date'); plt.ylabel('Rossmann Sales'); plt.title('Rossmann Effect of 
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_58_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_56_0.png)
 
 </div>
 </div>
@@ -1649,7 +1645,7 @@ plt.title('Rossmann Sales');
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_61_0.png)
+![png](C%3A/Users/sjgar/Documents/GitHub/jupyter-book/_build/images/notebooks/timeseries_59_0.png)
 
 </div>
 </div>
@@ -1703,7 +1699,7 @@ In this notebook, we made two different math model for the Rossmann store sales 
 
 ## References
 ---
-The dataset is the rossmann store sales dataset from kaggle:
+The dataset is the Rossmann store sales dataset from Kaggle:
 https://www.kaggle.com/c/rossmann-store-sales
 
 Facebook Prophet Documentation:
@@ -1711,10 +1707,7 @@ https://research.fb.com/prophet-forecasting-at-scale/
 
 
 
-## Contributers
-* nickespo21
-* Linghao Dong
-* Jose Figueroa
+**Contributers:** nickespo21, Linghao Dong, Jose Figueroa, & Sebastian Garcia
 
 
 
